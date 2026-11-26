@@ -1,0 +1,13 @@
+test_aggregate_counterexample (test_experiment.ContainmentTests.test_aggregate_counterexample) ... ok
+test_all_schedules (test_experiment.ContainmentTests.test_all_schedules) ... ok
+test_benign_completion (test_experiment.ContainmentTests.test_benign_completion) ... ok
+test_equal_workload (test_experiment.ContainmentTests.test_equal_workload) ... ok
+test_outage_counterexample (test_experiment.ContainmentTests.test_outage_counterexample) ... ok
+test_revocation_counterexample (test_experiment.ContainmentTests.test_revocation_counterexample) ... ok
+test_schedule_uniqueness_and_order (test_experiment.ContainmentTests.test_schedule_uniqueness_and_order) ... ok
+test_shutdown_counterexample (test_experiment.ContainmentTests.test_shutdown_counterexample) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.306s
+
+OK
