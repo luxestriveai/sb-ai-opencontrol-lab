@@ -1,0 +1,82 @@
+{
+  "record_type": "sanitized_summary_of_observed_automated_execution",
+  "review_date": "2026-11-27",
+  "timezone": "America/New_York",
+  "source_commit": "0a8fd874cba14f1940776c90b8f93ac9f9ade755",
+  "original_baseline_commit": "a4255447882e0671ebfb0ca9412a2f977fffa010",
+  "source_code_modified": false,
+  "external_human_validation": false,
+  "python": "3.12.10",
+  "os": "Windows-11-10.0.26300-SP0",
+  "v01": {
+    "recorded_at": "2026-11-27T00:15:51.034390-05:00",
+    "environment": "fresh external venv without pip or third-party packages; user site and bytecode disabled",
+    "working_directory": "external source snapshot of source_commit",
+    "commands": [
+      {"argv": ["python", "-m", "unittest", "-v"], "exit_code": 0, "elapsed_seconds": 0.5892206999997143},
+      {"argv": ["python", "experiment.py", "--output", "reproduced-results"], "exit_code": 0, "elapsed_seconds": 0.3544766000122763}
+    ],
+    "tests_passed": 8,
+    "scenario_families": 6,
+    "policies": 3,
+    "schedules_per_policy": 3457,
+    "runs": 10371,
+    "numerical_run_fields_equal": 114081,
+    "summary_reconciliation": "PASS",
+    "schedule_keys_match_independent_backtracking_enumeration": true,
+    "scenario_unsafe_runs": [
+      {"scenario": "benign", "schedules": 6, "snapshot": 0, "shared_budget": 0, "commit_guard": 0},
+      {"scenario": "aggregate_limit", "schedules": 6, "snapshot": 4, "shared_budget": 0, "commit_guard": 0},
+      {"scenario": "revocation", "schedules": 20, "snapshot": 10, "shared_budget": 10, "commit_guard": 0},
+      {"scenario": "authority_outage", "schedules": 45, "snapshot": 20, "shared_budget": 20, "commit_guard": 0},
+      {"scenario": "shutdown", "schedules": 20, "snapshot": 13, "shared_budget": 13, "commit_guard": 0},
+      {"scenario": "combined", "schedules": 3360, "snapshot": 1884, "shared_budget": 1506, "commit_guard": 0}
+    ],
+    "policy_totals": [
+      {"policy": "snapshot", "unsafe_runs": 1931, "commits": 3374, "unsafe_commits": 2461, "budget_violations": 904, "revocation_violations": 892, "outage_violations": 984, "shutdown_violations": 1615, "safe_commits": 913, "safe_opportunities": 913, "denied_safe": 0},
+      {"policy": "shared_budget", "unsafe_runs": 1549, "commits": 2470, "unsafe_commits": 1557, "budget_violations": 0, "revocation_violations": 578, "outage_violations": 724, "shutdown_violations": 1015, "safe_commits": 913, "safe_opportunities": 913, "denied_safe": 0},
+      {"policy": "commit_guard", "unsafe_runs": 0, "commits": 975, "unsafe_commits": 0, "budget_violations": 0, "revocation_violations": 0, "outage_violations": 0, "shutdown_violations": 0, "safe_commits": 975, "safe_opportunities": 975, "denied_safe": 0}
+    ],
+    "comparisons": {
+      "runs.csv": {"byte_identical": true, "semantic_equal": true, "original_sha256": "1f50168feb0a736be150fb96a1e6863a9a5552e64e2a331a2f5b2f97648f8d26", "reproduced_sha256": "1f50168feb0a736be150fb96a1e6863a9a5552e64e2a331a2f5b2f97648f8d26"},
+      "summary.csv": {"byte_identical": true, "semantic_equal": true, "original_sha256": "f655b15bb37b7a07a48d78466d4641c0b135cd5e8b9d89432d1f3ec5cd9ca653", "reproduced_sha256": "f655b15bb37b7a07a48d78466d4641c0b135cd5e8b9d89432d1f3ec5cd9ca653"},
+      "summary.json": {"byte_identical": false, "semantic_equal": true, "original_sha256": "67e94d9fe3c24f61c268568d1dc9ac70fc7ea153afe1120923e48826fb31f3e8", "reproduced_sha256": "6cf369aeeb962cd5f00393037a41a5e23945bbef26a900d26fcccb0d4c66a9cf", "difference": "317 LF endings in original versus 317 CRLF endings in reproduced file; no BOM; replacing reproduced CRLF with LF produces exact original bytes"}
+    }
+  },
+  "v02": {
+    "started_at": "2026-11-27T00:16:32.793591-05:00",
+    "completed_at": "2026-11-27T00:17:19.325759-05:00",
+    "environment": "installed Python; existing adapter in a second new short external directory, no dependencies installed",
+    "command_template": "python -B versions/v0.2/publication_reproduce.py --baseline-repo . --output NEW_EXTERNAL_DIRECTORY",
+    "command_path_redaction": "Only the machine-specific output path is represented by a placeholder; this template is not a literal executed path.",
+    "status": "PASS",
+    "elapsed_seconds": 46.699084100022446,
+    "v01_tests_passed": 8,
+    "v02_tests_passed": 23,
+    "distinct_tests_across_versions": 31,
+    "fixtures": {"matched": 43, "total": 43, "valid": 17, "invalid_or_insufficient": 26, "false_safe": 0, "false_rejection": 0, "false_unsafe": 0},
+    "selected_defects": {"detected": 10, "tested": 10, "prior_survivors_detected": 5},
+    "robustness_cases_matched": 7,
+    "baseline_runs": 10371,
+    "numerical_fields_reconciled": 114081,
+    "valid_safe": 6891,
+    "valid_unsafe": 3480,
+    "baseline_classification_discrepancies": 0,
+    "deterministic_artifacts_byte_identical": 9,
+    "semantic_reproduction_sha256": "59a34bf021676b6b66178d2a70ec396c6dc08edc3a60151c7625843ecf74bc52",
+    "candidate_modified": false
+  },
+  "integrity": {
+    "original_v01_git_blobs": "8/8 PASS",
+    "current_tree_vs_historical_root_manifest": "7/8; README documentation drift only",
+    "publication_v02": "50/50 PASS",
+    "historical_manifests_modified": false
+  },
+  "limitations": [
+    "AI-assisted automated reproduction is not independent human or scientific validation.",
+    "Finite development-visible fixtures and selected defects do not establish general detection rates.",
+    "Violation categories overlap; utility opportunities depend on policy history.",
+    "Trusted recorder, serial atomic state and complete mediation are assumed.",
+    "No production agents, frontier models, distributed execution or community pilots evaluated."
+  ]
+}

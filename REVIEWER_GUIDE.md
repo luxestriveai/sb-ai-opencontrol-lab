@@ -66,9 +66,9 @@ Write-Output "Reproduction evidence: $outputDir"
 
 The adapter rejects existing outputs and overlap with the source repository. It clones locally and writes only into the new external directory. Short paths avoid the Windows packed-object path-length failure observed during validation. Keep new raw logs private until reviewed for local paths.
 
-**Do not use the root README's `--output results` example:** it overwrites retained results. The inherited v0.2 README's direct integrity/test commands also assume historical unsanitized bytes. Use the publication adapter above. Its documented compatibility adjustments occur only in an isolated copy: historical CRLF manifest formatting and an explicitly marked hash binding for the sanitized diagnostic source. Scientific code, fixtures and acceptance criteria are unchanged.
+**Do not use `--output results`:** that historical example overwrites retained results; the current root README uses a new external directory. The inherited v0.2 README's direct integrity/test commands also assume historical unsanitized bytes. Use the publication adapter above. Its documented compatibility adjustments occur only in an isolated copy: historical CRLF manifest formatting and an explicitly marked hash binding for the sanitized diagnostic source. Scientific code, fixtures and acceptance criteria are unchanged.
 
-The root [v0.1 manifest](SHA256SUMS.txt) covers the original baseline. `PUBLICATION_SHA256SUMS.txt` covers the current v0.2 derivative. The inherited v0.2 `SHA256SUMS.txt` describes the private original archive, not sanitized-file hashes; do not regenerate it to conceal differences.
+The root [v0.1 manifest](SHA256SUMS.txt) covers the original baseline at `a4255447882e0671ebfb0ca9412a2f977fffa010`, whose eight Git blobs still validate. Since the public README correction in `0a8fd874cba14f1940776c90b8f93ac9f9ade755`, the current README intentionally differs: direct working-tree verification is 7/8, with no experimental code/result discrepancy. `PUBLICATION_SHA256SUMS.txt` covers the current v0.2 derivative (50/50). The inherited v0.2 `SHA256SUMS.txt` describes the private original archive, not sanitized-file hashes; do not regenerate either historical manifest to conceal differences.
 
 ## Limitations and provenance
 
@@ -81,7 +81,7 @@ The root [v0.1 manifest](SHA256SUMS.txt) covers the original baseline. `PUBLICAT
 
 ## Current status and proposed directions
 
-Automated reproduction and the bounded measurement-assurance checks are complete; the reviewed publication-safe milestone is committed locally. Historical documents saying “uncommitted” or “replication pending” describe earlier states. Independent human/expert review and public-release decisions remain separate. No BlueDot endorsement or funding is implied.
+The reviewed publication-safe milestone is published on the public repository's main branch. Fresh automated reproduction on November 27, 2026 reconfirmed the bounded results; see the [technical review](docs/MEASUREMENT_REVIEW_20261127.md). Historical documents saying “uncommitted”, “unpublished”, “not licensed” or “replication pending” describe earlier states. Automated reproduction is complete; independent human/expert review and founder approval are not established. No funder endorsement or funding is implied. See [contribution guidance](CONTRIBUTING.md) for external review participation.
 
 **Proposed, not completed:** assess concurrency and stale-authority failures against a conventional transactional baseline; evaluate retries and crash recovery; test measurement robustness on separately specified, held-out cases. Any later advanced-agent evaluation would require a justified research question and isolated threat model. These are possible directions, not established findings, grant commitments or authorization to begin v0.3.
 
