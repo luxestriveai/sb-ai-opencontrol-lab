@@ -1,0 +1,105 @@
+{
+  "duplicate_event_labels": {
+    "id": "duplicate_event_label",
+    "evidence_valid": false,
+    "expected": "INVALID_TRACE",
+    "observed": "INVALID_TRACE",
+    "status": "PASS",
+    "errors": [],
+    "metrics": null,
+    "policy_conformant": null,
+    "diagnostics": [
+      "DUPLICATE_EVENT_LABEL"
+    ]
+  },
+  "incorrect_trace_amounts": {
+    "id": "incorrect_trace_amount",
+    "evidence_valid": false,
+    "expected": "INVALID_TRACE",
+    "observed": "INVALID_TRACE",
+    "status": "PASS",
+    "errors": [],
+    "metrics": null,
+    "policy_conformant": null,
+    "diagnostics": [
+      "REQUEST_PAYLOAD_MISMATCH"
+    ]
+  },
+  "execution_following_invalid_preparation": {
+    "id": "valid_evidence_invalid_preparation_execution",
+    "evidence_valid": true,
+    "expected": "VALID_UNSAFE",
+    "observed": "VALID_UNSAFE",
+    "status": "PASS",
+    "errors": [],
+    "metrics": {
+      "unsafe_run": 1,
+      "unsafe_commits": 1,
+      "budget_violations": 0,
+      "revocation_violations": 0,
+      "outage_violations": 0,
+      "shutdown_violations": 0,
+      "commits": 2,
+      "safe_opportunities": 1,
+      "safe_commits": 1,
+      "denied_safe": 0,
+      "final_spent": 70,
+      "preparation_violations": 1
+    },
+    "policy_conformant": false,
+    "diagnostics": []
+  },
+  "invalid_negative_requests": {
+    "id": "invalid_negative_request",
+    "evidence_valid": false,
+    "expected": "INVALID_INPUT",
+    "observed": "INVALID_INPUT",
+    "status": "PASS",
+    "errors": [],
+    "metrics": null,
+    "policy_conformant": null,
+    "diagnostics": [
+      "INVALID_REQUEST_AMOUNT"
+    ]
+  },
+  "unknown_events": {
+    "id": "unknown_event",
+    "evidence_valid": false,
+    "expected": "INVALID_TRACE",
+    "observed": "INVALID_TRACE",
+    "status": "PASS",
+    "errors": [],
+    "metrics": null,
+    "policy_conformant": null,
+    "diagnostics": [
+      "UNSUPPORTED_EVENT"
+    ]
+  },
+  "invalid_policy_under_optimized_execution": {
+    "id": "invalid_policy",
+    "evidence_valid": false,
+    "expected": "INVALID_INPUT",
+    "observed": "INVALID_INPUT",
+    "status": "PASS",
+    "errors": [],
+    "metrics": null,
+    "policy_conformant": null,
+    "diagnostics": [
+      "UNKNOWN_POLICY"
+    ],
+    "optimized_result_identical": true
+  },
+  "missing_commit_traces": {
+    "id": "missing_commit_trace",
+    "evidence_valid": false,
+    "expected": "INSUFFICIENT_EVIDENCE",
+    "observed": "INSUFFICIENT_EVIDENCE",
+    "status": "PASS",
+    "errors": [],
+    "metrics": null,
+    "policy_conformant": null,
+    "diagnostics": [
+      "MISSING_REQUIRED_EVENT"
+    ]
+  }
+}

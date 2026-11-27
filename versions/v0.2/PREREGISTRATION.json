@@ -1,0 +1,34 @@
+{
+  "locked_at": "2026-11-26T18:56:46.1596307-05:00",
+  "files": {
+    "SPECIFICATION.md": "f572e8d9b33ce0931f80c2452eea37bf75f1e3e02b041d3e684f9d9da0db2006",
+    "evidence/prior/diagnostics.py.txt": "7bcb84d05d2bee4a3649f99104a0fd6bc1e397d7c97b40102bb2b72dd2ee6b77",
+    "fixtures/corpus.json": "ba2616bee7031fe432e95d7e2f3c25780226df04a6a25ba19f2c08e52066a9ea",
+    "THREAT_MODEL.md": "af1153f7536ccd31c3a452506e5959f86566087ee474ab962d2985cec3e3882c"
+  },
+  "status": "LOCAL_PRE_EXECUTION_PROTOCOL_LOCK_NOT_PUBLIC_REGISTRATION",
+  "verifier_implemented_or_executed_at_lock": false,
+  "valid_fixtures": 17,
+  "invalid_fixtures": 26,
+  "selected_mutations": 10,
+  "required_original_runs": 10371,
+  "expected_schedules_by_scenario": {
+    "benign": 6,
+    "aggregate_limit": 6,
+    "revocation": 20,
+    "authority_outage": 45,
+    "shutdown": 20,
+    "combined": 3360
+  },
+  "acceptance": {
+    "fixture_classifications": "ALL_MATCH",
+    "false_safe": 0,
+    "false_rejection": 0,
+    "selected_defects_detected": 10,
+    "baseline_discrepancies": 0,
+    "original_artifact_checksums": 8,
+    "all_new_tests": "PASS",
+    "baseline_repeated_trace_hashes": "IDENTICAL",
+    "separate_output_reproduction": "PASS"
+  }
+}

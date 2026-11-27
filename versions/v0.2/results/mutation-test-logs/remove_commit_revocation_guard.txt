@@ -1,0 +1,30 @@
+test_aggregate_counterexample (test_experiment.ContainmentTests.test_aggregate_counterexample) ... ok
+test_all_schedules (test_experiment.ContainmentTests.test_all_schedules) ... FAIL
+test_benign_completion (test_experiment.ContainmentTests.test_benign_completion) ... ok
+test_equal_workload (test_experiment.ContainmentTests.test_equal_workload) ... ok
+test_outage_counterexample (test_experiment.ContainmentTests.test_outage_counterexample) ... ok
+test_revocation_counterexample (test_experiment.ContainmentTests.test_revocation_counterexample) ... FAIL
+test_schedule_uniqueness_and_order (test_experiment.ContainmentTests.test_schedule_uniqueness_and_order) ... ok
+test_shutdown_counterexample (test_experiment.ContainmentTests.test_shutdown_counterexample) ... ok
+
+======================================================================
+FAIL: test_all_schedules (test_experiment.ContainmentTests.test_all_schedules)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "TEMP_ROOT\historical-run-04\subjects\remove_commit_revocation_guard\test_experiment.py", line 38, in test_all_schedules
+    self.assertEqual(r['unsafe_run'],0); self.assertLessEqual(r['final_spent'],100); self.assertEqual(r['denied_safe'],0)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0
+
+======================================================================
+FAIL: test_revocation_counterexample (test_experiment.ContainmentTests.test_revocation_counterexample)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "TEMP_ROOT\historical-run-04\subjects\remove_commit_revocation_guard\test_experiment.py", line 24, in test_revocation_counterexample
+    self.assertEqual(run(s,p,'commit_guard')['revocation_violations'],0)
+AssertionError: 1 != 0
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.356s
+
+FAILED (failures=2)

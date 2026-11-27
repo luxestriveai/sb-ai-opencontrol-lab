@@ -1,0 +1,34 @@
+{
+  "baseline_checksums_pass": 8,
+  "copied_files": [
+    {
+      "sha256": "874f1d2096842c08ab4e167af2f064043a3cc04f09de8835d0be4ca37370f108",
+      "file": "diagnostic-results.json",
+      "bytes": 9090
+    },
+    {
+      "sha256": "7bcb84d05d2bee4a3649f99104a0fd6bc1e397d7c97b40102bb2b72dd2ee6b77",
+      "file": "diagnostics.py.txt",
+      "bytes": 7334
+    },
+    {
+      "sha256": "bb00ad0cc7454e309de9ef821c41209dfe054ade379b223eb1d231cb9b6796e3",
+      "file": "reproduction_audit.json",
+      "bytes": 13104
+    },
+    {
+      "sha256": "5460aefa4dd20ea12a7d308ab13c64381cbdb009c73700ee69f57a1d9770109f",
+      "file": "survivor-effects.json",
+      "bytes": 1505
+    }
+  ],
+  "captured_at": "2026-11-26T18:53:24.2318388-05:00",
+  "manifest_sha256": "c2555661d48995f3cd73a0ee11138565d18fdb119b8e2ad737898debdd04950e",
+  "commit": "a4255447882e0671ebfb0ca9412a2f977fffa010",
+  "branch": "research/v0.2-measurement-assurance",
+  "previous_evidence_available": true,
+  "missing_evidence": [],
+  "prior_methodology_path": "TEMP_ROOT\\historical-run-01",
+  "prior_reproduction_path": "TEMP_ROOT\\historical-run-02",
+  "copied_evidence_byte_preserved": true
+}

@@ -1,0 +1,28 @@
+test_01_frozen_artifacts_and_locked_protocol (test_measurement.MeasurementAssuranceTests.test_01_frozen_artifacts_and_locked_protocol) ... ok
+test_02_independent_checker_has_no_legacy_imports (test_measurement.MeasurementAssuranceTests.test_02_independent_checker_has_no_legacy_imports) ... ok
+test_03_fixed_corpus_counts_and_expected_classifications (test_measurement.MeasurementAssuranceTests.test_03_fixed_corpus_counts_and_expected_classifications) ... ok
+test_04_fixed_fixture_metrics_and_policy_outcomes (test_measurement.MeasurementAssuranceTests.test_04_fixed_fixture_metrics_and_policy_outcomes) ... ok
+test_05_invalid_evidence_never_returns_metrics (test_measurement.MeasurementAssuranceTests.test_05_invalid_evidence_never_returns_metrics) ... ok
+test_06_negative_controls_include_safe_and_unsafe_valid_evidence (test_measurement.MeasurementAssuranceTests.test_06_negative_controls_include_safe_and_unsafe_valid_evidence) ... ok
+test_07_optimized_python_same_complete_fixture_results (test_measurement.MeasurementAssuranceTests.test_07_optimized_python_same_complete_fixture_results) ... ok
+test_08_independent_linear_extension_counts (test_measurement.MeasurementAssuranceTests.test_08_independent_linear_extension_counts) ... ok
+test_09_observer_excludes_legacy_auditor_and_restores_it (test_measurement.MeasurementAssuranceTests.test_09_observer_excludes_legacy_auditor_and_restores_it) ... ok
+test_10_complete_original_workload_reconciles (test_measurement.MeasurementAssuranceTests.test_10_complete_original_workload_reconciles) ... ok
+test_11_equal_count_omission_and_duplicate_are_detected (test_measurement.MeasurementAssuranceTests.test_11_equal_count_omission_and_duplicate_are_detected) ... ok
+test_12_missing_trace_detected_independently (test_measurement.MeasurementAssuranceTests.test_12_missing_trace_detected_independently) ... ok
+test_13_every_reported_run_numeric_field_checked (test_measurement.MeasurementAssuranceTests.test_13_every_reported_run_numeric_field_checked) ... ok
+test_14_csv_and_json_summary_checked_separately (test_measurement.MeasurementAssuranceTests.test_14_csv_and_json_summary_checked_separately) ... ok
+test_15_duplicate_missing_extra_summary_records (test_measurement.MeasurementAssuranceTests.test_15_duplicate_missing_extra_summary_records) ... ok
+test_16_boolean_metric_is_not_integer (test_measurement.MeasurementAssuranceTests.test_16_boolean_metric_is_not_integer) ... ok
+test_17_operation_identity_renaming_is_semantically_neutral (test_measurement.MeasurementAssuranceTests.test_17_operation_identity_renaming_is_semantically_neutral) ... ok
+test_18_conservation_across_original_workload (test_measurement.MeasurementAssuranceTests.test_18_conservation_across_original_workload) ... ok
+test_19_non_overwriting_output_guard (test_measurement.MeasurementAssuranceTests.test_19_non_overwriting_output_guard) ... ok
+test_20_historical_mutations_match_archived_definitions (test_measurement.MeasurementAssuranceTests.test_20_historical_mutations_match_archived_definitions) ... ok
+test_21_duplicate_json_object_keys_rejected (test_measurement.MeasurementAssuranceTests.test_21_duplicate_json_object_keys_rejected) ... ok
+test_22_legacy_input_validation_weakness_covered_under_optimization (test_measurement.MeasurementAssuranceTests.test_22_legacy_input_validation_weakness_covered_under_optimization) ... ok
+test_23_missing_metric_rejected_not_coerced_to_zero (test_measurement.MeasurementAssuranceTests.test_23_missing_metric_rejected_not_coerced_to_zero) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 11.570s
+
+OK

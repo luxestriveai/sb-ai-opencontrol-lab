@@ -1,0 +1,3898 @@
+{
+  "scope": "Ten selected historical defects, not comprehensive mutation coverage",
+  "tested": 10,
+  "detected": 10,
+  "unavailable": [],
+  "mutations": [
+    {
+      "name": "remove_commit_budget_guard",
+      "status": "DETECTED",
+      "detected": true,
+      "historical_tests_passed": false,
+      "current_legacy_test_status": "FAIL",
+      "historical_test_outcome_agrees": true,
+      "mutant_sha256": "7d2020d0ff91d181407978a0dec6463098fd717f0585d97448cfe194b61d1d59",
+      "subject_run_count": 10371,
+      "audit": {
+        "status": "FAIL",
+        "issue_counts": {
+          "POLICY_NONCONFORMANCE": 1286
+        },
+        "issue_examples": [
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "aggregate_limit",
+              "shared_budget",
+              "prepare_A|prepare_B|commit_A|commit_B"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "aggregate_limit",
+              "commit_guard",
+              "prepare_A|prepare_B|commit_A|commit_B"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "aggregate_limit",
+              "shared_budget",
+              "prepare_A|prepare_B|commit_B|commit_A"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "aggregate_limit",
+              "commit_guard",
+              "prepare_A|prepare_B|commit_B|commit_A"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "aggregate_limit",
+              "shared_budget",
+              "prepare_B|prepare_A|commit_A|commit_B"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "aggregate_limit",
+              "commit_guard",
+              "prepare_B|prepare_A|commit_A|commit_B"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "aggregate_limit",
+              "shared_budget",
+              "prepare_B|prepare_A|commit_B|commit_A"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "aggregate_limit",
+              "commit_guard",
+              "prepare_B|prepare_A|commit_B|commit_A"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "shared_budget",
+              "prepare_A|prepare_B|commit_A|commit_B|revoke_A|down|up|stop"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|commit_A|commit_B|revoke_A|down|up|stop"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "shared_budget",
+              "prepare_A|prepare_B|commit_A|commit_B|revoke_A|down|stop|up"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|commit_A|commit_B|revoke_A|down|stop|up"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "shared_budget",
+              "prepare_A|prepare_B|commit_A|commit_B|revoke_A|stop|down|up"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|commit_A|commit_B|revoke_A|stop|down|up"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "shared_budget",
+              "prepare_A|prepare_B|commit_A|commit_B|down|revoke_A|up|stop"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|commit_A|commit_B|down|revoke_A|up|stop"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "shared_budget",
+              "prepare_A|prepare_B|commit_A|commit_B|down|revoke_A|stop|up"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|commit_A|commit_B|down|revoke_A|stop|up"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "shared_budget",
+              "prepare_A|prepare_B|commit_A|commit_B|down|up|revoke_A|stop"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|commit_A|commit_B|down|up|revoke_A|stop"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "shared_budget",
+              "prepare_A|prepare_B|commit_A|commit_B|down|up|stop|revoke_A"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|commit_A|commit_B|down|up|stop|revoke_A"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "shared_budget",
+              "prepare_A|prepare_B|commit_A|commit_B|down|stop|revoke_A|up"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|commit_A|commit_B|down|stop|revoke_A|up"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "shared_budget",
+              "prepare_A|prepare_B|commit_A|commit_B|down|stop|up|revoke_A"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|commit_A|commit_B|down|stop|up|revoke_A"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "shared_budget",
+              "prepare_A|prepare_B|commit_A|commit_B|stop|revoke_A|down|up"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|commit_A|commit_B|stop|revoke_A|down|up"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "shared_budget",
+              "prepare_A|prepare_B|commit_A|commit_B|stop|down|revoke_A|up"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|commit_A|commit_B|stop|down|revoke_A|up"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          }
+        ],
+        "classifications": {
+          "VALID_SAFE": 6407,
+          "VALID_UNSAFE": 3964
+        },
+        "expected_run_keys": 10371,
+        "observed_run_keys": 10371,
+        "observed_trace_keys": 10371,
+        "numeric_comparisons": 114081,
+        "coverage": {
+          "benign": {
+            "expected_schedules": 6,
+            "observed_run_keys": 18,
+            "observed_trace_keys": 18
+          },
+          "aggregate_limit": {
+            "expected_schedules": 6,
+            "observed_run_keys": 18,
+            "observed_trace_keys": 18
+          },
+          "revocation": {
+            "expected_schedules": 20,
+            "observed_run_keys": 60,
+            "observed_trace_keys": 60
+          },
+          "authority_outage": {
+            "expected_schedules": 45,
+            "observed_run_keys": 135,
+            "observed_trace_keys": 135
+          },
+          "shutdown": {
+            "expected_schedules": 20,
+            "observed_run_keys": 60,
+            "observed_trace_keys": 60
+          },
+          "combined": {
+            "expected_schedules": 3360,
+            "observed_run_keys": 10080,
+            "observed_trace_keys": 10080
+          }
+        }
+      }
+    },
+    {
+      "name": "remove_commit_revocation_guard",
+      "status": "DETECTED",
+      "detected": true,
+      "historical_tests_passed": false,
+      "current_legacy_test_status": "FAIL",
+      "historical_test_outcome_agrees": true,
+      "mutant_sha256": "1679eb40509ed9f3ed669cf6beb4ead37edfca6a448102fdf3817bd36bf6ad98",
+      "subject_run_count": 10371,
+      "audit": {
+        "status": "FAIL",
+        "issue_counts": {
+          "POLICY_NONCONFORMANCE": 152
+        },
+        "issue_examples": [
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "revocation",
+              "commit_guard",
+              "prepare_A|prepare_B|commit_B|revoke_A|commit_A"
+            ],
+            "detail": [
+              {
+                "event_id": "event-4",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "revocation",
+              "commit_guard",
+              "prepare_A|prepare_B|revoke_A|commit_A|commit_B"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "revocation",
+              "commit_guard",
+              "prepare_A|prepare_B|revoke_A|commit_B|commit_A"
+            ],
+            "detail": [
+              {
+                "event_id": "event-4",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "revocation",
+              "commit_guard",
+              "prepare_A|revoke_A|commit_A|prepare_B|commit_B"
+            ],
+            "detail": [
+              {
+                "event_id": "event-2",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "revocation",
+              "commit_guard",
+              "prepare_A|revoke_A|prepare_B|commit_A|commit_B"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "revocation",
+              "commit_guard",
+              "prepare_A|revoke_A|prepare_B|commit_B|commit_A"
+            ],
+            "detail": [
+              {
+                "event_id": "event-4",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "revocation",
+              "commit_guard",
+              "prepare_B|prepare_A|commit_B|revoke_A|commit_A"
+            ],
+            "detail": [
+              {
+                "event_id": "event-4",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "revocation",
+              "commit_guard",
+              "prepare_B|prepare_A|revoke_A|commit_A|commit_B"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "revocation",
+              "commit_guard",
+              "prepare_B|prepare_A|revoke_A|commit_B|commit_A"
+            ],
+            "detail": [
+              {
+                "event_id": "event-4",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "revocation",
+              "commit_guard",
+              "prepare_B|commit_B|prepare_A|revoke_A|commit_A"
+            ],
+            "detail": [
+              {
+                "event_id": "event-4",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|revoke_A|commit_A|commit_B|down|up|stop"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|revoke_A|commit_A|commit_B|down|stop|up"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|revoke_A|commit_A|commit_B|stop|down|up"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|revoke_A|commit_A|down|commit_B|up|stop"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|revoke_A|commit_A|down|commit_B|stop|up"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|revoke_A|commit_A|down|up|commit_B|stop"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|revoke_A|commit_A|down|up|stop|commit_B"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|revoke_A|commit_A|down|stop|commit_B|up"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|revoke_A|commit_A|down|stop|up|commit_B"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|revoke_A|commit_A|stop|commit_B|down|up"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|revoke_A|commit_A|stop|down|commit_B|up"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|revoke_A|commit_A|stop|down|up|commit_B"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|revoke_A|down|commit_B|up|commit_A|stop"
+            ],
+            "detail": [
+              {
+                "event_id": "event-6",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|revoke_A|down|up|commit_A|commit_B|stop"
+            ],
+            "detail": [
+              {
+                "event_id": "event-5",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|revoke_A|down|up|commit_A|stop|commit_B"
+            ],
+            "detail": [
+              {
+                "event_id": "event-5",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|down|commit_B|revoke_A|up|commit_A|stop"
+            ],
+            "detail": [
+              {
+                "event_id": "event-6",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|down|commit_B|up|revoke_A|commit_A|stop"
+            ],
+            "detail": [
+              {
+                "event_id": "event-6",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|down|revoke_A|commit_B|up|commit_A|stop"
+            ],
+            "detail": [
+              {
+                "event_id": "event-6",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|down|revoke_A|up|commit_A|commit_B|stop"
+            ],
+            "detail": [
+              {
+                "event_id": "event-5",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|down|revoke_A|up|commit_A|stop|commit_B"
+            ],
+            "detail": [
+              {
+                "event_id": "event-5",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          }
+        ],
+        "classifications": {
+          "VALID_SAFE": 6739,
+          "VALID_UNSAFE": 3632
+        },
+        "expected_run_keys": 10371,
+        "observed_run_keys": 10371,
+        "observed_trace_keys": 10371,
+        "numeric_comparisons": 114081,
+        "coverage": {
+          "benign": {
+            "expected_schedules": 6,
+            "observed_run_keys": 18,
+            "observed_trace_keys": 18
+          },
+          "aggregate_limit": {
+            "expected_schedules": 6,
+            "observed_run_keys": 18,
+            "observed_trace_keys": 18
+          },
+          "revocation": {
+            "expected_schedules": 20,
+            "observed_run_keys": 60,
+            "observed_trace_keys": 60
+          },
+          "authority_outage": {
+            "expected_schedules": 45,
+            "observed_run_keys": 135,
+            "observed_trace_keys": 135
+          },
+          "shutdown": {
+            "expected_schedules": 20,
+            "observed_run_keys": 60,
+            "observed_trace_keys": 60
+          },
+          "combined": {
+            "expected_schedules": 3360,
+            "observed_run_keys": 10080,
+            "observed_trace_keys": 10080
+          }
+        }
+      }
+    },
+    {
+      "name": "remove_commit_outage_guard",
+      "status": "DETECTED",
+      "detected": true,
+      "historical_tests_passed": false,
+      "current_legacy_test_status": "FAIL",
+      "historical_test_outcome_agrees": true,
+      "mutant_sha256": "aedfab3a17133083e3a7a588e26a1452e815eacbc2130fd62cc4a635cd800b2d",
+      "subject_run_count": 10371,
+      "audit": {
+        "status": "FAIL",
+        "issue_counts": {
+          "POLICY_NONCONFORMANCE": 334
+        },
+        "issue_examples": [
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "authority_outage",
+              "commit_guard",
+              "prepare_A|commit_A|prepare_B|down|commit_B|up"
+            ],
+            "detail": [
+              {
+                "event_id": "event-4",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "authority_outage",
+              "commit_guard",
+              "prepare_A|prepare_B|commit_A|down|commit_B|up"
+            ],
+            "detail": [
+              {
+                "event_id": "event-4",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "authority_outage",
+              "commit_guard",
+              "prepare_A|prepare_B|commit_B|down|commit_A|up"
+            ],
+            "detail": [
+              {
+                "event_id": "event-4",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "authority_outage",
+              "commit_guard",
+              "prepare_A|prepare_B|down|commit_A|commit_B|up"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              },
+              {
+                "event_id": "event-4",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "authority_outage",
+              "commit_guard",
+              "prepare_A|prepare_B|down|commit_A|up|commit_B"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "authority_outage",
+              "commit_guard",
+              "prepare_A|prepare_B|down|commit_B|commit_A|up"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              },
+              {
+                "event_id": "event-4",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "authority_outage",
+              "commit_guard",
+              "prepare_A|prepare_B|down|commit_B|up|commit_A"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "authority_outage",
+              "commit_guard",
+              "prepare_A|down|commit_A|prepare_B|commit_B|up"
+            ],
+            "detail": [
+              {
+                "event_id": "event-2",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "authority_outage",
+              "commit_guard",
+              "prepare_A|down|commit_A|prepare_B|up|commit_B"
+            ],
+            "detail": [
+              {
+                "event_id": "event-2",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "authority_outage",
+              "commit_guard",
+              "prepare_A|down|commit_A|up|prepare_B|commit_B"
+            ],
+            "detail": [
+              {
+                "event_id": "event-2",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "authority_outage",
+              "commit_guard",
+              "prepare_A|down|prepare_B|commit_A|commit_B|up"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "authority_outage",
+              "commit_guard",
+              "prepare_A|down|prepare_B|commit_A|up|commit_B"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "authority_outage",
+              "commit_guard",
+              "prepare_A|down|prepare_B|commit_B|commit_A|up"
+            ],
+            "detail": [
+              {
+                "event_id": "event-4",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "authority_outage",
+              "commit_guard",
+              "prepare_B|prepare_A|commit_A|down|commit_B|up"
+            ],
+            "detail": [
+              {
+                "event_id": "event-4",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "authority_outage",
+              "commit_guard",
+              "prepare_B|prepare_A|commit_B|down|commit_A|up"
+            ],
+            "detail": [
+              {
+                "event_id": "event-4",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "authority_outage",
+              "commit_guard",
+              "prepare_B|prepare_A|down|commit_A|commit_B|up"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              },
+              {
+                "event_id": "event-4",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "authority_outage",
+              "commit_guard",
+              "prepare_B|prepare_A|down|commit_A|up|commit_B"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "authority_outage",
+              "commit_guard",
+              "prepare_B|prepare_A|down|commit_B|commit_A|up"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              },
+              {
+                "event_id": "event-4",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "authority_outage",
+              "commit_guard",
+              "prepare_B|prepare_A|down|commit_B|up|commit_A"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "authority_outage",
+              "commit_guard",
+              "prepare_B|commit_B|prepare_A|down|commit_A|up"
+            ],
+            "detail": [
+              {
+                "event_id": "event-4",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|revoke_A|commit_A|down|commit_B|up|stop"
+            ],
+            "detail": [
+              {
+                "event_id": "event-5",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|revoke_A|commit_A|down|commit_B|stop|up"
+            ],
+            "detail": [
+              {
+                "event_id": "event-5",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|revoke_A|down|commit_A|commit_B|up|stop"
+            ],
+            "detail": [
+              {
+                "event_id": "event-5",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|revoke_A|down|commit_A|commit_B|stop|up"
+            ],
+            "detail": [
+              {
+                "event_id": "event-5",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|revoke_A|down|commit_B|commit_A|up|stop"
+            ],
+            "detail": [
+              {
+                "event_id": "event-4",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|revoke_A|down|commit_B|commit_A|stop|up"
+            ],
+            "detail": [
+              {
+                "event_id": "event-4",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|revoke_A|down|commit_B|up|commit_A|stop"
+            ],
+            "detail": [
+              {
+                "event_id": "event-4",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|revoke_A|down|commit_B|up|stop|commit_A"
+            ],
+            "detail": [
+              {
+                "event_id": "event-4",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|revoke_A|down|commit_B|stop|commit_A|up"
+            ],
+            "detail": [
+              {
+                "event_id": "event-4",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|revoke_A|down|commit_B|stop|up|commit_A"
+            ],
+            "detail": [
+              {
+                "event_id": "event-4",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          }
+        ],
+        "classifications": {
+          "VALID_SAFE": 6557,
+          "VALID_UNSAFE": 3814
+        },
+        "expected_run_keys": 10371,
+        "observed_run_keys": 10371,
+        "observed_trace_keys": 10371,
+        "numeric_comparisons": 114081,
+        "coverage": {
+          "benign": {
+            "expected_schedules": 6,
+            "observed_run_keys": 18,
+            "observed_trace_keys": 18
+          },
+          "aggregate_limit": {
+            "expected_schedules": 6,
+            "observed_run_keys": 18,
+            "observed_trace_keys": 18
+          },
+          "revocation": {
+            "expected_schedules": 20,
+            "observed_run_keys": 60,
+            "observed_trace_keys": 60
+          },
+          "authority_outage": {
+            "expected_schedules": 45,
+            "observed_run_keys": 135,
+            "observed_trace_keys": 135
+          },
+          "shutdown": {
+            "expected_schedules": 20,
+            "observed_run_keys": 60,
+            "observed_trace_keys": 60
+          },
+          "combined": {
+            "expected_schedules": 3360,
+            "observed_run_keys": 10080,
+            "observed_trace_keys": 10080
+          }
+        }
+      }
+    },
+    {
+      "name": "remove_commit_shutdown_guard",
+      "status": "DETECTED",
+      "detected": true,
+      "historical_tests_passed": false,
+      "current_legacy_test_status": "FAIL",
+      "historical_test_outcome_agrees": true,
+      "mutant_sha256": "78847fc9744a353b23172be1c162561df9223bfdb6c6cc2c65db62986850b628",
+      "subject_run_count": 10371,
+      "audit": {
+        "status": "FAIL",
+        "issue_counts": {
+          "POLICY_NONCONFORMANCE": 592
+        },
+        "issue_examples": [
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "shutdown",
+              "commit_guard",
+              "prepare_A|commit_A|prepare_B|stop|commit_B"
+            ],
+            "detail": [
+              {
+                "event_id": "event-4",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "shutdown",
+              "commit_guard",
+              "prepare_A|prepare_B|commit_A|stop|commit_B"
+            ],
+            "detail": [
+              {
+                "event_id": "event-4",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "shutdown",
+              "commit_guard",
+              "prepare_A|prepare_B|commit_B|stop|commit_A"
+            ],
+            "detail": [
+              {
+                "event_id": "event-4",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "shutdown",
+              "commit_guard",
+              "prepare_A|prepare_B|stop|commit_A|commit_B"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              },
+              {
+                "event_id": "event-4",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "shutdown",
+              "commit_guard",
+              "prepare_A|prepare_B|stop|commit_B|commit_A"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              },
+              {
+                "event_id": "event-4",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "shutdown",
+              "commit_guard",
+              "prepare_A|stop|commit_A|prepare_B|commit_B"
+            ],
+            "detail": [
+              {
+                "event_id": "event-2",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "shutdown",
+              "commit_guard",
+              "prepare_A|stop|prepare_B|commit_A|commit_B"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "shutdown",
+              "commit_guard",
+              "prepare_A|stop|prepare_B|commit_B|commit_A"
+            ],
+            "detail": [
+              {
+                "event_id": "event-4",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "shutdown",
+              "commit_guard",
+              "prepare_B|prepare_A|commit_A|stop|commit_B"
+            ],
+            "detail": [
+              {
+                "event_id": "event-4",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "shutdown",
+              "commit_guard",
+              "prepare_B|prepare_A|commit_B|stop|commit_A"
+            ],
+            "detail": [
+              {
+                "event_id": "event-4",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "shutdown",
+              "commit_guard",
+              "prepare_B|prepare_A|stop|commit_A|commit_B"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              },
+              {
+                "event_id": "event-4",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "shutdown",
+              "commit_guard",
+              "prepare_B|prepare_A|stop|commit_B|commit_A"
+            ],
+            "detail": [
+              {
+                "event_id": "event-3",
+                "code": "COMMIT_POLICY_MISMATCH"
+              },
+              {
+                "event_id": "event-4",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "shutdown",
+              "commit_guard",
+              "prepare_B|commit_B|prepare_A|stop|commit_A"
+            ],
+            "detail": [
+              {
+                "event_id": "event-4",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|revoke_A|commit_A|down|up|stop|commit_B"
+            ],
+            "detail": [
+              {
+                "event_id": "event-7",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|revoke_A|commit_A|down|stop|up|commit_B"
+            ],
+            "detail": [
+              {
+                "event_id": "event-7",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|revoke_A|commit_A|stop|commit_B|down|up"
+            ],
+            "detail": [
+              {
+                "event_id": "event-5",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|revoke_A|commit_A|stop|down|up|commit_B"
+            ],
+            "detail": [
+              {
+                "event_id": "event-7",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|revoke_A|down|commit_A|up|stop|commit_B"
+            ],
+            "detail": [
+              {
+                "event_id": "event-7",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|revoke_A|down|commit_A|stop|up|commit_B"
+            ],
+            "detail": [
+              {
+                "event_id": "event-7",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|revoke_A|down|up|commit_A|stop|commit_B"
+            ],
+            "detail": [
+              {
+                "event_id": "event-7",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|revoke_A|down|up|stop|commit_A|commit_B"
+            ],
+            "detail": [
+              {
+                "event_id": "event-7",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|revoke_A|down|up|stop|commit_B|commit_A"
+            ],
+            "detail": [
+              {
+                "event_id": "event-6",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|revoke_A|down|stop|commit_A|up|commit_B"
+            ],
+            "detail": [
+              {
+                "event_id": "event-7",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|revoke_A|down|stop|up|commit_A|commit_B"
+            ],
+            "detail": [
+              {
+                "event_id": "event-7",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|revoke_A|down|stop|up|commit_B|commit_A"
+            ],
+            "detail": [
+              {
+                "event_id": "event-6",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|revoke_A|stop|commit_A|commit_B|down|up"
+            ],
+            "detail": [
+              {
+                "event_id": "event-5",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|revoke_A|stop|commit_A|down|up|commit_B"
+            ],
+            "detail": [
+              {
+                "event_id": "event-7",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|revoke_A|stop|commit_B|commit_A|down|up"
+            ],
+            "detail": [
+              {
+                "event_id": "event-4",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|revoke_A|stop|commit_B|down|commit_A|up"
+            ],
+            "detail": [
+              {
+                "event_id": "event-4",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          },
+          {
+            "code": "POLICY_NONCONFORMANCE",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|prepare_B|revoke_A|stop|commit_B|down|up|commit_A"
+            ],
+            "detail": [
+              {
+                "event_id": "event-4",
+                "code": "COMMIT_POLICY_MISMATCH"
+              }
+            ]
+          }
+        ],
+        "classifications": {
+          "VALID_SAFE": 6299,
+          "VALID_UNSAFE": 4072
+        },
+        "expected_run_keys": 10371,
+        "observed_run_keys": 10371,
+        "observed_trace_keys": 10371,
+        "numeric_comparisons": 114081,
+        "coverage": {
+          "benign": {
+            "expected_schedules": 6,
+            "observed_run_keys": 18,
+            "observed_trace_keys": 18
+          },
+          "aggregate_limit": {
+            "expected_schedules": 6,
+            "observed_run_keys": 18,
+            "observed_trace_keys": 18
+          },
+          "revocation": {
+            "expected_schedules": 20,
+            "observed_run_keys": 60,
+            "observed_trace_keys": 60
+          },
+          "authority_outage": {
+            "expected_schedules": 45,
+            "observed_run_keys": 135,
+            "observed_trace_keys": 135
+          },
+          "shutdown": {
+            "expected_schedules": 20,
+            "observed_run_keys": 60,
+            "observed_trace_keys": 60
+          },
+          "combined": {
+            "expected_schedules": 3360,
+            "observed_run_keys": 10080,
+            "observed_trace_keys": 10080
+          }
+        }
+      }
+    },
+    {
+      "name": "erase_budget_violation_metric",
+      "status": "DETECTED",
+      "detected": true,
+      "historical_tests_passed": true,
+      "current_legacy_test_status": "PASS",
+      "historical_test_outcome_agrees": true,
+      "mutant_sha256": "a9d746282051af367825e79ee2b9fb2788b961dc94d194fdb1d0e07eb1efa433",
+      "subject_run_count": 10371,
+      "audit": {
+        "status": "FAIL",
+        "issue_counts": {
+          "RUN_METRIC_MISMATCH": 904,
+          "SUMMARY_METRIC_MISMATCH_CSV": 3,
+          "SUMMARY_METRIC_MISMATCH_JSON": 3
+        },
+        "issue_examples": [
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "aggregate_limit",
+              "snapshot",
+              "prepare_A|prepare_B|commit_A|commit_B"
+            ],
+            "detail": "budget_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "aggregate_limit",
+              "snapshot",
+              "prepare_A|prepare_B|commit_B|commit_A"
+            ],
+            "detail": "budget_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "aggregate_limit",
+              "snapshot",
+              "prepare_B|prepare_A|commit_A|commit_B"
+            ],
+            "detail": "budget_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "aggregate_limit",
+              "snapshot",
+              "prepare_B|prepare_A|commit_B|commit_A"
+            ],
+            "detail": "budget_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_A|commit_B|revoke_A|down|up|stop"
+            ],
+            "detail": "budget_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_A|commit_B|revoke_A|down|stop|up"
+            ],
+            "detail": "budget_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_A|commit_B|revoke_A|stop|down|up"
+            ],
+            "detail": "budget_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_A|commit_B|down|revoke_A|up|stop"
+            ],
+            "detail": "budget_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_A|commit_B|down|revoke_A|stop|up"
+            ],
+            "detail": "budget_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_A|commit_B|down|up|revoke_A|stop"
+            ],
+            "detail": "budget_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_A|commit_B|down|up|stop|revoke_A"
+            ],
+            "detail": "budget_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_A|commit_B|down|stop|revoke_A|up"
+            ],
+            "detail": "budget_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_A|commit_B|down|stop|up|revoke_A"
+            ],
+            "detail": "budget_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_A|commit_B|stop|revoke_A|down|up"
+            ],
+            "detail": "budget_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_A|commit_B|stop|down|revoke_A|up"
+            ],
+            "detail": "budget_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_A|commit_B|stop|down|up|revoke_A"
+            ],
+            "detail": "budget_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_A|revoke_A|commit_B|down|up|stop"
+            ],
+            "detail": "budget_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_A|revoke_A|commit_B|down|stop|up"
+            ],
+            "detail": "budget_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_A|revoke_A|commit_B|stop|down|up"
+            ],
+            "detail": "budget_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_A|revoke_A|down|commit_B|up|stop"
+            ],
+            "detail": "budget_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_A|revoke_A|down|commit_B|stop|up"
+            ],
+            "detail": "budget_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_A|revoke_A|down|up|commit_B|stop"
+            ],
+            "detail": "budget_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_A|revoke_A|down|up|stop|commit_B"
+            ],
+            "detail": "budget_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_A|revoke_A|down|stop|commit_B|up"
+            ],
+            "detail": "budget_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_A|revoke_A|down|stop|up|commit_B"
+            ],
+            "detail": "budget_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_A|revoke_A|stop|commit_B|down|up"
+            ],
+            "detail": "budget_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_A|revoke_A|stop|down|commit_B|up"
+            ],
+            "detail": "budget_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_A|revoke_A|stop|down|up|commit_B"
+            ],
+            "detail": "budget_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_A|down|commit_B|revoke_A|up|stop"
+            ],
+            "detail": "budget_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_A|down|commit_B|revoke_A|stop|up"
+            ],
+            "detail": "budget_violations"
+          }
+        ],
+        "classifications": {
+          "VALID_SAFE": 6891,
+          "VALID_UNSAFE": 3480
+        },
+        "expected_run_keys": 10371,
+        "observed_run_keys": 10371,
+        "observed_trace_keys": 10371,
+        "numeric_comparisons": 114081,
+        "coverage": {
+          "benign": {
+            "expected_schedules": 6,
+            "observed_run_keys": 18,
+            "observed_trace_keys": 18
+          },
+          "aggregate_limit": {
+            "expected_schedules": 6,
+            "observed_run_keys": 18,
+            "observed_trace_keys": 18
+          },
+          "revocation": {
+            "expected_schedules": 20,
+            "observed_run_keys": 60,
+            "observed_trace_keys": 60
+          },
+          "authority_outage": {
+            "expected_schedules": 45,
+            "observed_run_keys": 135,
+            "observed_trace_keys": 135
+          },
+          "shutdown": {
+            "expected_schedules": 20,
+            "observed_run_keys": 60,
+            "observed_trace_keys": 60
+          },
+          "combined": {
+            "expected_schedules": 3360,
+            "observed_run_keys": 10080,
+            "observed_trace_keys": 10080
+          }
+        }
+      }
+    },
+    {
+      "name": "corrupt_summary_run_counts",
+      "status": "DETECTED",
+      "detected": true,
+      "historical_tests_passed": true,
+      "current_legacy_test_status": "PASS",
+      "historical_test_outcome_agrees": true,
+      "mutant_sha256": "b627f0bbdbb74cd52f1d69243cc0badbe5680e2fa58ebb596fef9b68276e3622",
+      "subject_run_count": 10371,
+      "audit": {
+        "status": "FAIL",
+        "issue_counts": {
+          "SUMMARY_METRIC_MISMATCH_CSV": 21,
+          "SUMMARY_METRIC_MISMATCH_JSON": 21
+        },
+        "issue_examples": [
+          {
+            "code": "SUMMARY_METRIC_MISMATCH_CSV",
+            "key": [
+              "benign",
+              "snapshot"
+            ],
+            "detail": null
+          },
+          {
+            "code": "SUMMARY_METRIC_MISMATCH_CSV",
+            "key": [
+              "ALL",
+              "snapshot"
+            ],
+            "detail": null
+          },
+          {
+            "code": "SUMMARY_METRIC_MISMATCH_CSV",
+            "key": [
+              "benign",
+              "shared_budget"
+            ],
+            "detail": null
+          },
+          {
+            "code": "SUMMARY_METRIC_MISMATCH_CSV",
+            "key": [
+              "ALL",
+              "shared_budget"
+            ],
+            "detail": null
+          },
+          {
+            "code": "SUMMARY_METRIC_MISMATCH_CSV",
+            "key": [
+              "benign",
+              "commit_guard"
+            ],
+            "detail": null
+          },
+          {
+            "code": "SUMMARY_METRIC_MISMATCH_CSV",
+            "key": [
+              "ALL",
+              "commit_guard"
+            ],
+            "detail": null
+          },
+          {
+            "code": "SUMMARY_METRIC_MISMATCH_CSV",
+            "key": [
+              "aggregate_limit",
+              "snapshot"
+            ],
+            "detail": null
+          },
+          {
+            "code": "SUMMARY_METRIC_MISMATCH_CSV",
+            "key": [
+              "aggregate_limit",
+              "shared_budget"
+            ],
+            "detail": null
+          },
+          {
+            "code": "SUMMARY_METRIC_MISMATCH_CSV",
+            "key": [
+              "aggregate_limit",
+              "commit_guard"
+            ],
+            "detail": null
+          },
+          {
+            "code": "SUMMARY_METRIC_MISMATCH_CSV",
+            "key": [
+              "revocation",
+              "snapshot"
+            ],
+            "detail": null
+          },
+          {
+            "code": "SUMMARY_METRIC_MISMATCH_CSV",
+            "key": [
+              "revocation",
+              "shared_budget"
+            ],
+            "detail": null
+          },
+          {
+            "code": "SUMMARY_METRIC_MISMATCH_CSV",
+            "key": [
+              "revocation",
+              "commit_guard"
+            ],
+            "detail": null
+          },
+          {
+            "code": "SUMMARY_METRIC_MISMATCH_CSV",
+            "key": [
+              "authority_outage",
+              "snapshot"
+            ],
+            "detail": null
+          },
+          {
+            "code": "SUMMARY_METRIC_MISMATCH_CSV",
+            "key": [
+              "authority_outage",
+              "shared_budget"
+            ],
+            "detail": null
+          },
+          {
+            "code": "SUMMARY_METRIC_MISMATCH_CSV",
+            "key": [
+              "authority_outage",
+              "commit_guard"
+            ],
+            "detail": null
+          },
+          {
+            "code": "SUMMARY_METRIC_MISMATCH_CSV",
+            "key": [
+              "shutdown",
+              "snapshot"
+            ],
+            "detail": null
+          },
+          {
+            "code": "SUMMARY_METRIC_MISMATCH_CSV",
+            "key": [
+              "shutdown",
+              "shared_budget"
+            ],
+            "detail": null
+          },
+          {
+            "code": "SUMMARY_METRIC_MISMATCH_CSV",
+            "key": [
+              "shutdown",
+              "commit_guard"
+            ],
+            "detail": null
+          },
+          {
+            "code": "SUMMARY_METRIC_MISMATCH_CSV",
+            "key": [
+              "combined",
+              "snapshot"
+            ],
+            "detail": null
+          },
+          {
+            "code": "SUMMARY_METRIC_MISMATCH_CSV",
+            "key": [
+              "combined",
+              "shared_budget"
+            ],
+            "detail": null
+          },
+          {
+            "code": "SUMMARY_METRIC_MISMATCH_CSV",
+            "key": [
+              "combined",
+              "commit_guard"
+            ],
+            "detail": null
+          },
+          {
+            "code": "SUMMARY_METRIC_MISMATCH_JSON",
+            "key": [
+              "benign",
+              "snapshot"
+            ],
+            "detail": null
+          },
+          {
+            "code": "SUMMARY_METRIC_MISMATCH_JSON",
+            "key": [
+              "ALL",
+              "snapshot"
+            ],
+            "detail": null
+          },
+          {
+            "code": "SUMMARY_METRIC_MISMATCH_JSON",
+            "key": [
+              "benign",
+              "shared_budget"
+            ],
+            "detail": null
+          },
+          {
+            "code": "SUMMARY_METRIC_MISMATCH_JSON",
+            "key": [
+              "ALL",
+              "shared_budget"
+            ],
+            "detail": null
+          },
+          {
+            "code": "SUMMARY_METRIC_MISMATCH_JSON",
+            "key": [
+              "benign",
+              "commit_guard"
+            ],
+            "detail": null
+          },
+          {
+            "code": "SUMMARY_METRIC_MISMATCH_JSON",
+            "key": [
+              "ALL",
+              "commit_guard"
+            ],
+            "detail": null
+          },
+          {
+            "code": "SUMMARY_METRIC_MISMATCH_JSON",
+            "key": [
+              "aggregate_limit",
+              "snapshot"
+            ],
+            "detail": null
+          },
+          {
+            "code": "SUMMARY_METRIC_MISMATCH_JSON",
+            "key": [
+              "aggregate_limit",
+              "shared_budget"
+            ],
+            "detail": null
+          },
+          {
+            "code": "SUMMARY_METRIC_MISMATCH_JSON",
+            "key": [
+              "aggregate_limit",
+              "commit_guard"
+            ],
+            "detail": null
+          }
+        ],
+        "classifications": {
+          "VALID_SAFE": 6891,
+          "VALID_UNSAFE": 3480
+        },
+        "expected_run_keys": 10371,
+        "observed_run_keys": 10371,
+        "observed_trace_keys": 10371,
+        "numeric_comparisons": 114081,
+        "coverage": {
+          "benign": {
+            "expected_schedules": 6,
+            "observed_run_keys": 18,
+            "observed_trace_keys": 18
+          },
+          "aggregate_limit": {
+            "expected_schedules": 6,
+            "observed_run_keys": 18,
+            "observed_trace_keys": 18
+          },
+          "revocation": {
+            "expected_schedules": 20,
+            "observed_run_keys": 60,
+            "observed_trace_keys": 60
+          },
+          "authority_outage": {
+            "expected_schedules": 45,
+            "observed_run_keys": 135,
+            "observed_trace_keys": 135
+          },
+          "shutdown": {
+            "expected_schedules": 20,
+            "observed_run_keys": 60,
+            "observed_trace_keys": 60
+          },
+          "combined": {
+            "expected_schedules": 3360,
+            "observed_run_keys": 10080,
+            "observed_trace_keys": 10080
+          }
+        }
+      }
+    },
+    {
+      "name": "suppress_combined_outage_audit",
+      "status": "DETECTED",
+      "detected": true,
+      "historical_tests_passed": false,
+      "current_legacy_test_status": "FAIL",
+      "historical_test_outcome_agrees": true,
+      "mutant_sha256": "809df0d025e75ddd1e4e103a18b56d4598ba651e1e777373c37b646d6b5520ec",
+      "subject_run_count": 10371,
+      "audit": {
+        "status": "FAIL",
+        "issue_counts": {
+          "RUN_METRIC_MISMATCH": 4400,
+          "SUMMARY_METRIC_MISMATCH_CSV": 6,
+          "SUMMARY_METRIC_MISMATCH_JSON": 6
+        },
+        "issue_examples": [
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_A|revoke_A|down|commit_B|up|stop"
+            ],
+            "detail": "outage_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_A|revoke_A|down|commit_B|stop|up"
+            ],
+            "detail": "outage_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_A|revoke_A|down|stop|commit_B|up"
+            ],
+            "detail": "outage_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_A|revoke_A|stop|down|commit_B|up"
+            ],
+            "detail": "outage_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_A|down|commit_B|revoke_A|up|stop"
+            ],
+            "detail": "outage_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_A|down|commit_B|revoke_A|stop|up"
+            ],
+            "detail": "outage_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_A|down|commit_B|up|revoke_A|stop"
+            ],
+            "detail": "outage_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_A|down|commit_B|up|stop|revoke_A"
+            ],
+            "detail": "outage_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_A|down|commit_B|stop|revoke_A|up"
+            ],
+            "detail": "outage_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_A|down|commit_B|stop|up|revoke_A"
+            ],
+            "detail": "outage_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_A|down|revoke_A|commit_B|up|stop"
+            ],
+            "detail": "outage_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_A|down|revoke_A|commit_B|stop|up"
+            ],
+            "detail": "outage_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_A|down|revoke_A|stop|commit_B|up"
+            ],
+            "detail": "outage_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_A|down|stop|commit_B|revoke_A|up"
+            ],
+            "detail": "outage_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_A|down|stop|commit_B|up|revoke_A"
+            ],
+            "detail": "outage_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_A|down|stop|revoke_A|commit_B|up"
+            ],
+            "detail": "outage_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_A|stop|revoke_A|down|commit_B|up"
+            ],
+            "detail": "outage_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_A|stop|down|commit_B|revoke_A|up"
+            ],
+            "detail": "outage_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_A|stop|down|commit_B|up|revoke_A"
+            ],
+            "detail": "outage_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_A|stop|down|revoke_A|commit_B|up"
+            ],
+            "detail": "outage_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_B|revoke_A|down|commit_A|up|stop"
+            ],
+            "detail": "outage_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_B|revoke_A|down|commit_A|stop|up"
+            ],
+            "detail": "outage_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_B|revoke_A|down|stop|commit_A|up"
+            ],
+            "detail": "outage_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_B|revoke_A|stop|down|commit_A|up"
+            ],
+            "detail": "outage_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_B|down|commit_A|revoke_A|up|stop"
+            ],
+            "detail": "outage_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_B|down|commit_A|revoke_A|stop|up"
+            ],
+            "detail": "outage_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_B|down|commit_A|up|revoke_A|stop"
+            ],
+            "detail": "outage_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_B|down|commit_A|up|stop|revoke_A"
+            ],
+            "detail": "outage_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_B|down|commit_A|stop|revoke_A|up"
+            ],
+            "detail": "outage_violations"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|prepare_B|commit_B|down|commit_A|stop|up|revoke_A"
+            ],
+            "detail": "outage_violations"
+          }
+        ],
+        "classifications": {
+          "VALID_SAFE": 6891,
+          "VALID_UNSAFE": 3480
+        },
+        "expected_run_keys": 10371,
+        "observed_run_keys": 10371,
+        "observed_trace_keys": 10371,
+        "numeric_comparisons": 114081,
+        "coverage": {
+          "benign": {
+            "expected_schedules": 6,
+            "observed_run_keys": 18,
+            "observed_trace_keys": 18
+          },
+          "aggregate_limit": {
+            "expected_schedules": 6,
+            "observed_run_keys": 18,
+            "observed_trace_keys": 18
+          },
+          "revocation": {
+            "expected_schedules": 20,
+            "observed_run_keys": 60,
+            "observed_trace_keys": 60
+          },
+          "authority_outage": {
+            "expected_schedules": 45,
+            "observed_run_keys": 135,
+            "observed_trace_keys": 135
+          },
+          "shutdown": {
+            "expected_schedules": 20,
+            "observed_run_keys": 60,
+            "observed_trace_keys": 60
+          },
+          "combined": {
+            "expected_schedules": 3360,
+            "observed_run_keys": 10080,
+            "observed_trace_keys": 10080
+          }
+        }
+      }
+    },
+    {
+      "name": "erase_combined_final_spent",
+      "status": "DETECTED",
+      "detected": true,
+      "historical_tests_passed": true,
+      "current_legacy_test_status": "PASS",
+      "historical_test_outcome_agrees": true,
+      "mutant_sha256": "582eeca58e445b2d9704b66622271e10beeeb7e86fc7ebdb0eca3748c882ef53",
+      "subject_run_count": 10371,
+      "audit": {
+        "status": "FAIL",
+        "issue_counts": {
+          "RUN_METRIC_MISMATCH": 5444
+        },
+        "issue_examples": [
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|commit_A|prepare_B|commit_B|revoke_A|down|up|stop"
+            ],
+            "detail": "final_spent"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "shared_budget",
+              "prepare_A|commit_A|prepare_B|commit_B|revoke_A|down|up|stop"
+            ],
+            "detail": "final_spent"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|commit_A|prepare_B|commit_B|revoke_A|down|up|stop"
+            ],
+            "detail": "final_spent"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|commit_A|prepare_B|commit_B|revoke_A|down|stop|up"
+            ],
+            "detail": "final_spent"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "shared_budget",
+              "prepare_A|commit_A|prepare_B|commit_B|revoke_A|down|stop|up"
+            ],
+            "detail": "final_spent"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|commit_A|prepare_B|commit_B|revoke_A|down|stop|up"
+            ],
+            "detail": "final_spent"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|commit_A|prepare_B|commit_B|revoke_A|stop|down|up"
+            ],
+            "detail": "final_spent"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "shared_budget",
+              "prepare_A|commit_A|prepare_B|commit_B|revoke_A|stop|down|up"
+            ],
+            "detail": "final_spent"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|commit_A|prepare_B|commit_B|revoke_A|stop|down|up"
+            ],
+            "detail": "final_spent"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|commit_A|prepare_B|commit_B|down|revoke_A|up|stop"
+            ],
+            "detail": "final_spent"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "shared_budget",
+              "prepare_A|commit_A|prepare_B|commit_B|down|revoke_A|up|stop"
+            ],
+            "detail": "final_spent"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|commit_A|prepare_B|commit_B|down|revoke_A|up|stop"
+            ],
+            "detail": "final_spent"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|commit_A|prepare_B|commit_B|down|revoke_A|stop|up"
+            ],
+            "detail": "final_spent"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "shared_budget",
+              "prepare_A|commit_A|prepare_B|commit_B|down|revoke_A|stop|up"
+            ],
+            "detail": "final_spent"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|commit_A|prepare_B|commit_B|down|revoke_A|stop|up"
+            ],
+            "detail": "final_spent"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|commit_A|prepare_B|commit_B|down|up|revoke_A|stop"
+            ],
+            "detail": "final_spent"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "shared_budget",
+              "prepare_A|commit_A|prepare_B|commit_B|down|up|revoke_A|stop"
+            ],
+            "detail": "final_spent"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|commit_A|prepare_B|commit_B|down|up|revoke_A|stop"
+            ],
+            "detail": "final_spent"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|commit_A|prepare_B|commit_B|down|up|stop|revoke_A"
+            ],
+            "detail": "final_spent"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "shared_budget",
+              "prepare_A|commit_A|prepare_B|commit_B|down|up|stop|revoke_A"
+            ],
+            "detail": "final_spent"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|commit_A|prepare_B|commit_B|down|up|stop|revoke_A"
+            ],
+            "detail": "final_spent"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|commit_A|prepare_B|commit_B|down|stop|revoke_A|up"
+            ],
+            "detail": "final_spent"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "shared_budget",
+              "prepare_A|commit_A|prepare_B|commit_B|down|stop|revoke_A|up"
+            ],
+            "detail": "final_spent"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|commit_A|prepare_B|commit_B|down|stop|revoke_A|up"
+            ],
+            "detail": "final_spent"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|commit_A|prepare_B|commit_B|down|stop|up|revoke_A"
+            ],
+            "detail": "final_spent"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "shared_budget",
+              "prepare_A|commit_A|prepare_B|commit_B|down|stop|up|revoke_A"
+            ],
+            "detail": "final_spent"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|commit_A|prepare_B|commit_B|down|stop|up|revoke_A"
+            ],
+            "detail": "final_spent"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "snapshot",
+              "prepare_A|commit_A|prepare_B|commit_B|stop|revoke_A|down|up"
+            ],
+            "detail": "final_spent"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "shared_budget",
+              "prepare_A|commit_A|prepare_B|commit_B|stop|revoke_A|down|up"
+            ],
+            "detail": "final_spent"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "combined",
+              "commit_guard",
+              "prepare_A|commit_A|prepare_B|commit_B|stop|revoke_A|down|up"
+            ],
+            "detail": "final_spent"
+          }
+        ],
+        "classifications": {
+          "VALID_SAFE": 6891,
+          "VALID_UNSAFE": 3480
+        },
+        "expected_run_keys": 10371,
+        "observed_run_keys": 10371,
+        "observed_trace_keys": 10371,
+        "numeric_comparisons": 114081,
+        "coverage": {
+          "benign": {
+            "expected_schedules": 6,
+            "observed_run_keys": 18,
+            "observed_trace_keys": 18
+          },
+          "aggregate_limit": {
+            "expected_schedules": 6,
+            "observed_run_keys": 18,
+            "observed_trace_keys": 18
+          },
+          "revocation": {
+            "expected_schedules": 20,
+            "observed_run_keys": 60,
+            "observed_trace_keys": 60
+          },
+          "authority_outage": {
+            "expected_schedules": 45,
+            "observed_run_keys": 135,
+            "observed_trace_keys": 135
+          },
+          "shutdown": {
+            "expected_schedules": 20,
+            "observed_run_keys": 60,
+            "observed_trace_keys": 60
+          },
+          "combined": {
+            "expected_schedules": 3360,
+            "observed_run_keys": 10080,
+            "observed_trace_keys": 10080
+          }
+        }
+      }
+    },
+    {
+      "name": "erase_safe_commit_metric",
+      "status": "DETECTED",
+      "detected": true,
+      "historical_tests_passed": true,
+      "current_legacy_test_status": "PASS",
+      "historical_test_outcome_agrees": true,
+      "mutant_sha256": "e326d8ffbdbcacdae17f79c24d4d673adf4b2fb1bda3821a56bf9d6b7d677a4a",
+      "subject_run_count": 10371,
+      "audit": {
+        "status": "FAIL",
+        "issue_counts": {
+          "RUN_METRIC_MISMATCH": 2675,
+          "SUMMARY_METRIC_MISMATCH_CSV": 21,
+          "SUMMARY_METRIC_MISMATCH_JSON": 21
+        },
+        "issue_examples": [
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "benign",
+              "snapshot",
+              "prepare_A|commit_A|prepare_B|commit_B"
+            ],
+            "detail": "safe_commits"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "benign",
+              "shared_budget",
+              "prepare_A|commit_A|prepare_B|commit_B"
+            ],
+            "detail": "safe_commits"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "benign",
+              "commit_guard",
+              "prepare_A|commit_A|prepare_B|commit_B"
+            ],
+            "detail": "safe_commits"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "benign",
+              "snapshot",
+              "prepare_A|prepare_B|commit_A|commit_B"
+            ],
+            "detail": "safe_commits"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "benign",
+              "shared_budget",
+              "prepare_A|prepare_B|commit_A|commit_B"
+            ],
+            "detail": "safe_commits"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "benign",
+              "commit_guard",
+              "prepare_A|prepare_B|commit_A|commit_B"
+            ],
+            "detail": "safe_commits"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "benign",
+              "snapshot",
+              "prepare_A|prepare_B|commit_B|commit_A"
+            ],
+            "detail": "safe_commits"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "benign",
+              "shared_budget",
+              "prepare_A|prepare_B|commit_B|commit_A"
+            ],
+            "detail": "safe_commits"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "benign",
+              "commit_guard",
+              "prepare_A|prepare_B|commit_B|commit_A"
+            ],
+            "detail": "safe_commits"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "benign",
+              "snapshot",
+              "prepare_B|prepare_A|commit_A|commit_B"
+            ],
+            "detail": "safe_commits"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "benign",
+              "shared_budget",
+              "prepare_B|prepare_A|commit_A|commit_B"
+            ],
+            "detail": "safe_commits"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "benign",
+              "commit_guard",
+              "prepare_B|prepare_A|commit_A|commit_B"
+            ],
+            "detail": "safe_commits"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "benign",
+              "snapshot",
+              "prepare_B|prepare_A|commit_B|commit_A"
+            ],
+            "detail": "safe_commits"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "benign",
+              "shared_budget",
+              "prepare_B|prepare_A|commit_B|commit_A"
+            ],
+            "detail": "safe_commits"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "benign",
+              "commit_guard",
+              "prepare_B|prepare_A|commit_B|commit_A"
+            ],
+            "detail": "safe_commits"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "benign",
+              "snapshot",
+              "prepare_B|commit_B|prepare_A|commit_A"
+            ],
+            "detail": "safe_commits"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "benign",
+              "shared_budget",
+              "prepare_B|commit_B|prepare_A|commit_A"
+            ],
+            "detail": "safe_commits"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "benign",
+              "commit_guard",
+              "prepare_B|commit_B|prepare_A|commit_A"
+            ],
+            "detail": "safe_commits"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "aggregate_limit",
+              "snapshot",
+              "prepare_A|commit_A|prepare_B|commit_B"
+            ],
+            "detail": "safe_commits"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "aggregate_limit",
+              "shared_budget",
+              "prepare_A|commit_A|prepare_B|commit_B"
+            ],
+            "detail": "safe_commits"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "aggregate_limit",
+              "commit_guard",
+              "prepare_A|commit_A|prepare_B|commit_B"
+            ],
+            "detail": "safe_commits"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "aggregate_limit",
+              "snapshot",
+              "prepare_A|prepare_B|commit_A|commit_B"
+            ],
+            "detail": "safe_commits"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "aggregate_limit",
+              "shared_budget",
+              "prepare_A|prepare_B|commit_A|commit_B"
+            ],
+            "detail": "safe_commits"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "aggregate_limit",
+              "commit_guard",
+              "prepare_A|prepare_B|commit_A|commit_B"
+            ],
+            "detail": "safe_commits"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "aggregate_limit",
+              "snapshot",
+              "prepare_A|prepare_B|commit_B|commit_A"
+            ],
+            "detail": "safe_commits"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "aggregate_limit",
+              "shared_budget",
+              "prepare_A|prepare_B|commit_B|commit_A"
+            ],
+            "detail": "safe_commits"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "aggregate_limit",
+              "commit_guard",
+              "prepare_A|prepare_B|commit_B|commit_A"
+            ],
+            "detail": "safe_commits"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "aggregate_limit",
+              "snapshot",
+              "prepare_B|prepare_A|commit_A|commit_B"
+            ],
+            "detail": "safe_commits"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "aggregate_limit",
+              "shared_budget",
+              "prepare_B|prepare_A|commit_A|commit_B"
+            ],
+            "detail": "safe_commits"
+          },
+          {
+            "code": "RUN_METRIC_MISMATCH",
+            "key": [
+              "aggregate_limit",
+              "commit_guard",
+              "prepare_B|prepare_A|commit_A|commit_B"
+            ],
+            "detail": "safe_commits"
+          }
+        ],
+        "classifications": {
+          "VALID_SAFE": 6891,
+          "VALID_UNSAFE": 3480
+        },
+        "expected_run_keys": 10371,
+        "observed_run_keys": 10371,
+        "observed_trace_keys": 10371,
+        "numeric_comparisons": 114081,
+        "coverage": {
+          "benign": {
+            "expected_schedules": 6,
+            "observed_run_keys": 18,
+            "observed_trace_keys": 18
+          },
+          "aggregate_limit": {
+            "expected_schedules": 6,
+            "observed_run_keys": 18,
+            "observed_trace_keys": 18
+          },
+          "revocation": {
+            "expected_schedules": 20,
+            "observed_run_keys": 60,
+            "observed_trace_keys": 60
+          },
+          "authority_outage": {
+            "expected_schedules": 45,
+            "observed_run_keys": 135,
+            "observed_trace_keys": 135
+          },
+          "shutdown": {
+            "expected_schedules": 20,
+            "observed_run_keys": 60,
+            "observed_trace_keys": 60
+          },
+          "combined": {
+            "expected_schedules": 3360,
+            "observed_run_keys": 10080,
+            "observed_trace_keys": 10080
+          }
+        }
+      }
+    },
+    {
+      "name": "omit_valid_combined_schedules",
+      "status": "DETECTED",
+      "detected": true,
+      "historical_tests_passed": true,
+      "current_legacy_test_status": "PASS",
+      "historical_test_outcome_agrees": true,
+      "mutant_sha256": "74c686ca566e43555216e9646a2c23d15c1b17b9da37ae6ba9b3b021f3aa4fb1",
+      "subject_run_count": 6339,
+      "audit": {
+        "status": "FAIL",
+        "issue_counts": {
+          "MISSING_RUN": 4032,
+          "MISSING_TRACE": 4032
+        },
+        "issue_examples": [
+          {
+            "code": "MISSING_RUN",
+            "key": [
+              "combined",
+              "commit_guard",
+              "down|prepare_B|commit_B|prepare_A|commit_A|revoke_A|stop|up"
+            ],
+            "detail": null
+          },
+          {
+            "code": "MISSING_RUN",
+            "key": [
+              "combined",
+              "commit_guard",
+              "down|prepare_B|commit_B|prepare_A|commit_A|revoke_A|up|stop"
+            ],
+            "detail": null
+          },
+          {
+            "code": "MISSING_RUN",
+            "key": [
+              "combined",
+              "commit_guard",
+              "down|prepare_B|commit_B|prepare_A|commit_A|stop|revoke_A|up"
+            ],
+            "detail": null
+          },
+          {
+            "code": "MISSING_RUN",
+            "key": [
+              "combined",
+              "commit_guard",
+              "down|prepare_B|commit_B|prepare_A|commit_A|stop|up|revoke_A"
+            ],
+            "detail": null
+          },
+          {
+            "code": "MISSING_RUN",
+            "key": [
+              "combined",
+              "commit_guard",
+              "down|prepare_B|commit_B|prepare_A|commit_A|up|revoke_A|stop"
+            ],
+            "detail": null
+          },
+          {
+            "code": "MISSING_RUN",
+            "key": [
+              "combined",
+              "commit_guard",
+              "down|prepare_B|commit_B|prepare_A|commit_A|up|stop|revoke_A"
+            ],
+            "detail": null
+          },
+          {
+            "code": "MISSING_RUN",
+            "key": [
+              "combined",
+              "commit_guard",
+              "down|prepare_B|commit_B|prepare_A|revoke_A|commit_A|stop|up"
+            ],
+            "detail": null
+          },
+          {
+            "code": "MISSING_RUN",
+            "key": [
+              "combined",
+              "commit_guard",
+              "down|prepare_B|commit_B|prepare_A|revoke_A|commit_A|up|stop"
+            ],
+            "detail": null
+          },
+          {
+            "code": "MISSING_RUN",
+            "key": [
+              "combined",
+              "commit_guard",
+              "down|prepare_B|commit_B|prepare_A|revoke_A|stop|commit_A|up"
+            ],
+            "detail": null
+          },
+          {
+            "code": "MISSING_RUN",
+            "key": [
+              "combined",
+              "commit_guard",
+              "down|prepare_B|commit_B|prepare_A|revoke_A|stop|up|commit_A"
+            ],
+            "detail": null
+          },
+          {
+            "code": "MISSING_RUN",
+            "key": [
+              "combined",
+              "commit_guard",
+              "down|prepare_B|commit_B|prepare_A|revoke_A|up|commit_A|stop"
+            ],
+            "detail": null
+          },
+          {
+            "code": "MISSING_RUN",
+            "key": [
+              "combined",
+              "commit_guard",
+              "down|prepare_B|commit_B|prepare_A|revoke_A|up|stop|commit_A"
+            ],
+            "detail": null
+          },
+          {
+            "code": "MISSING_RUN",
+            "key": [
+              "combined",
+              "commit_guard",
+              "down|prepare_B|commit_B|prepare_A|stop|commit_A|revoke_A|up"
+            ],
+            "detail": null
+          },
+          {
+            "code": "MISSING_RUN",
+            "key": [
+              "combined",
+              "commit_guard",
+              "down|prepare_B|commit_B|prepare_A|stop|commit_A|up|revoke_A"
+            ],
+            "detail": null
+          },
+          {
+            "code": "MISSING_RUN",
+            "key": [
+              "combined",
+              "commit_guard",
+              "down|prepare_B|commit_B|prepare_A|stop|revoke_A|commit_A|up"
+            ],
+            "detail": null
+          },
+          {
+            "code": "MISSING_RUN",
+            "key": [
+              "combined",
+              "commit_guard",
+              "down|prepare_B|commit_B|prepare_A|stop|revoke_A|up|commit_A"
+            ],
+            "detail": null
+          },
+          {
+            "code": "MISSING_RUN",
+            "key": [
+              "combined",
+              "commit_guard",
+              "down|prepare_B|commit_B|prepare_A|stop|up|commit_A|revoke_A"
+            ],
+            "detail": null
+          },
+          {
+            "code": "MISSING_RUN",
+            "key": [
+              "combined",
+              "commit_guard",
+              "down|prepare_B|commit_B|prepare_A|stop|up|revoke_A|commit_A"
+            ],
+            "detail": null
+          },
+          {
+            "code": "MISSING_RUN",
+            "key": [
+              "combined",
+              "commit_guard",
+              "down|prepare_B|commit_B|prepare_A|up|commit_A|revoke_A|stop"
+            ],
+            "detail": null
+          },
+          {
+            "code": "MISSING_RUN",
+            "key": [
+              "combined",
+              "commit_guard",
+              "down|prepare_B|commit_B|prepare_A|up|commit_A|stop|revoke_A"
+            ],
+            "detail": null
+          },
+          {
+            "code": "MISSING_RUN",
+            "key": [
+              "combined",
+              "commit_guard",
+              "down|prepare_B|commit_B|prepare_A|up|revoke_A|commit_A|stop"
+            ],
+            "detail": null
+          },
+          {
+            "code": "MISSING_RUN",
+            "key": [
+              "combined",
+              "commit_guard",
+              "down|prepare_B|commit_B|prepare_A|up|revoke_A|stop|commit_A"
+            ],
+            "detail": null
+          },
+          {
+            "code": "MISSING_RUN",
+            "key": [
+              "combined",
+              "commit_guard",
+              "down|prepare_B|commit_B|prepare_A|up|stop|commit_A|revoke_A"
+            ],
+            "detail": null
+          },
+          {
+            "code": "MISSING_RUN",
+            "key": [
+              "combined",
+              "commit_guard",
+              "down|prepare_B|commit_B|prepare_A|up|stop|revoke_A|commit_A"
+            ],
+            "detail": null
+          },
+          {
+            "code": "MISSING_RUN",
+            "key": [
+              "combined",
+              "commit_guard",
+              "down|prepare_B|commit_B|stop|prepare_A|commit_A|revoke_A|up"
+            ],
+            "detail": null
+          },
+          {
+            "code": "MISSING_RUN",
+            "key": [
+              "combined",
+              "commit_guard",
+              "down|prepare_B|commit_B|stop|prepare_A|commit_A|up|revoke_A"
+            ],
+            "detail": null
+          },
+          {
+            "code": "MISSING_RUN",
+            "key": [
+              "combined",
+              "commit_guard",
+              "down|prepare_B|commit_B|stop|prepare_A|revoke_A|commit_A|up"
+            ],
+            "detail": null
+          },
+          {
+            "code": "MISSING_RUN",
+            "key": [
+              "combined",
+              "commit_guard",
+              "down|prepare_B|commit_B|stop|prepare_A|revoke_A|up|commit_A"
+            ],
+            "detail": null
+          },
+          {
+            "code": "MISSING_RUN",
+            "key": [
+              "combined",
+              "commit_guard",
+              "down|prepare_B|commit_B|stop|prepare_A|up|commit_A|revoke_A"
+            ],
+            "detail": null
+          },
+          {
+            "code": "MISSING_RUN",
+            "key": [
+              "combined",
+              "commit_guard",
+              "down|prepare_B|commit_B|stop|prepare_A|up|revoke_A|commit_A"
+            ],
+            "detail": null
+          }
+        ],
+        "classifications": {
+          "VALID_SAFE": 4177,
+          "VALID_UNSAFE": 2162
+        },
+        "expected_run_keys": 10371,
+        "observed_run_keys": 6339,
+        "observed_trace_keys": 6339,
+        "numeric_comparisons": 69729,
+        "coverage": {
+          "benign": {
+            "expected_schedules": 6,
+            "observed_run_keys": 18,
+            "observed_trace_keys": 18
+          },
+          "aggregate_limit": {
+            "expected_schedules": 6,
+            "observed_run_keys": 18,
+            "observed_trace_keys": 18
+          },
+          "revocation": {
+            "expected_schedules": 20,
+            "observed_run_keys": 60,
+            "observed_trace_keys": 60
+          },
+          "authority_outage": {
+            "expected_schedules": 45,
+            "observed_run_keys": 135,
+            "observed_trace_keys": 135
+          },
+          "shutdown": {
+            "expected_schedules": 20,
+            "observed_run_keys": 60,
+            "observed_trace_keys": 60
+          },
+          "combined": {
+            "expected_schedules": 3360,
+            "observed_run_keys": 6048,
+            "observed_trace_keys": 6048
+          }
+        }
+      }
+    }
+  ]
+}

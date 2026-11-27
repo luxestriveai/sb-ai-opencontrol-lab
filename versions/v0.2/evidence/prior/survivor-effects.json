@@ -1,0 +1,56 @@
+[
+  {
+    "case": "baseline",
+    "event_sequences": 3457,
+    "total_runs": 10371,
+    "snapshot_summary_runs": 3457,
+    "snapshot_budget_violations": 904,
+    "safe_commits_all_policies": 2801,
+    "combined_max_final_spent": 120
+  },
+  {
+    "case": "erase_budget_violation_metric",
+    "event_sequences": 3457,
+    "total_runs": 10371,
+    "snapshot_summary_runs": 3457,
+    "snapshot_budget_violations": 0,
+    "safe_commits_all_policies": 2801,
+    "combined_max_final_spent": 120
+  },
+  {
+    "case": "corrupt_summary_run_counts",
+    "event_sequences": 3457,
+    "total_runs": 10371,
+    "snapshot_summary_runs": 3458,
+    "snapshot_budget_violations": 904,
+    "safe_commits_all_policies": 2801,
+    "combined_max_final_spent": 120
+  },
+  {
+    "case": "erase_combined_final_spent",
+    "event_sequences": 3457,
+    "total_runs": 10371,
+    "snapshot_summary_runs": 3457,
+    "snapshot_budget_violations": 904,
+    "safe_commits_all_policies": 2801,
+    "combined_max_final_spent": 0
+  },
+  {
+    "case": "erase_safe_commit_metric",
+    "event_sequences": 3457,
+    "total_runs": 10371,
+    "snapshot_summary_runs": 3457,
+    "snapshot_budget_violations": 904,
+    "safe_commits_all_policies": 0,
+    "combined_max_final_spent": 120
+  },
+  {
+    "case": "omit_valid_combined_schedules",
+    "event_sequences": 2113,
+    "total_runs": 6339,
+    "snapshot_summary_runs": 2113,
+    "snapshot_budget_violations": 496,
+    "safe_commits_all_policies": 1744,
+    "combined_max_final_spent": 120
+  }
+]

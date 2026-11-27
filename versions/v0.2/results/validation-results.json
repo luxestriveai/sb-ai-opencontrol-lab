@@ -1,0 +1,108 @@
+{
+  "status": "PASS",
+  "started_at": "2026-11-26T19:06:30.171386-05:00",
+  "completed_at": "2026-11-26T19:07:08.368682-05:00",
+  "timezone": "America/New_York",
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "output_directory": "TEMP_ROOT\\historical-run-04",
+  "frozen_commit": "a4255447882e0671ebfb0ca9412a2f977fffa010",
+  "development_branch": "research/v0.2-measurement-assurance",
+  "protocol": {
+    "status": "PASS",
+    "locked_at": "2026-11-26T18:56:46.1596307-05:00",
+    "registration_sha256": "b3c75022d3406fb5a2e95a0b3818e4a347f260c98fea4e3f0a91ee7675d333c5"
+  },
+  "v02_tests": {
+    "status": "PASS",
+    "exit_code": 0,
+    "tests_run": 23,
+    "reported_elapsed_seconds": 11.57
+  },
+  "v01_tests": {
+    "status": "PASS",
+    "exit_code": 0,
+    "tests_run": 8,
+    "reported_elapsed_seconds": 0.333
+  },
+  "fixture_summary": {
+    "status": "PASS",
+    "total": 43,
+    "valid_fixtures": 17,
+    "invalid_fixtures": 26,
+    "correct_classifications": 43,
+    "false_safe": 0,
+    "false_rejection": 0,
+    "false_unsafe": 0
+  },
+  "optimized_fixture_results_identical": true,
+  "baseline": {
+    "status": "PASS",
+    "issue_counts": {},
+    "issue_examples": [],
+    "classifications": {
+      "VALID_SAFE": 6891,
+      "VALID_UNSAFE": 3480
+    },
+    "expected_run_keys": 10371,
+    "observed_run_keys": 10371,
+    "observed_trace_keys": 10371,
+    "numeric_comparisons": 114081,
+    "coverage": {
+      "benign": {
+        "expected_schedules": 6,
+        "observed_run_keys": 18,
+        "observed_trace_keys": 18
+      },
+      "aggregate_limit": {
+        "expected_schedules": 6,
+        "observed_run_keys": 18,
+        "observed_trace_keys": 18
+      },
+      "revocation": {
+        "expected_schedules": 20,
+        "observed_run_keys": 60,
+        "observed_trace_keys": 60
+      },
+      "authority_outage": {
+        "expected_schedules": 45,
+        "observed_run_keys": 135,
+        "observed_trace_keys": 135
+      },
+      "shutdown": {
+        "expected_schedules": 20,
+        "observed_run_keys": 60,
+        "observed_trace_keys": 60
+      },
+      "combined": {
+        "expected_schedules": 3360,
+        "observed_run_keys": 10080,
+        "observed_trace_keys": 10080
+      }
+    }
+  },
+  "baseline_observation_and_audit_seconds": 1.5389032999810297,
+  "baseline_trace_repeated_exactly": true,
+  "original_baseline_classification_discrepancies": 0,
+  "original_artifact_checksums_passed": 8,
+  "original_manifest_unchanged": true,
+  "selected_defects_tested": 10,
+  "selected_defects_detected": 10,
+  "prior_survivors_detected": 5,
+  "robustness_cases_passed": 7,
+  "semantic_reproduction_sha256": "59a34bf021676b6b66178d2a70ec396c6dc08edc3a60151c7625843ecf74bc52",
+  "source_sha256": {
+    "baseline_adapter.py": "790dd8c9421dad040172226ddbc2107b54923148e3926e6f8572618c6a440acd",
+    "check_integrity.py": "578b42772d1f724527adf7213cf5481b94a5eaffb8c44b517c0cd8e980f70bd3",
+    "run_validation.py": "aed44df9e0495acd7de9ecae808ff13fcdf8f1f4b0178b423e7e8b8e7f9700f7",
+    "test_measurement.py": "c5ae774b556db1bf57ff1f15a2e0108e4293b8ad201f85762c1c8a1e86b114e2",
+    "validation_common.py": "b24e2800a8b4a0e184c37d6d974123c08e3a8d105a1d896b5cea41a262f85e01",
+    "verifier.py": "fdd9ad05e21a61d8029e0e10b38d8b4684c3e8b205c1e0ad00fc9aa67cbf4f5e",
+    "fixtures/corpus.json": "ba2616bee7031fe432e95d7e2f3c25780226df04a6a25ba19f2c08e52066a9ea",
+    "fixtures/mutations.json": "3bdd572e12c4eb13dc005a0aeea11eb85c383398558d7dddea521ac1b5fa7d8d",
+    "SPECIFICATION.md": "f572e8d9b33ce0931f80c2452eea37bf75f1e3e02b041d3e684f9d9da0db2006",
+    "PREREGISTRATION.json": "b3c75022d3406fb5a2e95a0b3818e4a347f260c98fea4e3f0a91ee7675d333c5"
+  },
+  "elapsed_seconds": 38.362707199994475,
+  "limitations": "Finite development-visible corpus and trusted local instrumentation; no external validation, formal proof or real-world guarantee"
+}

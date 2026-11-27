@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "observations_per_pass": 10371,
+  "passes": 2,
+  "canonical_trace_sha256": "0c807e09f94cf5dceace3d64c629544d37a5fc68459239b46a4068fd0c9d9f6b",
+  "measurements_equal": true,
+  "gzip_sha256": "9e64624a8d035d2caed65d9303a7dfa8dc5ff41a0b296a79362ea9c07b9ae88f"
+}

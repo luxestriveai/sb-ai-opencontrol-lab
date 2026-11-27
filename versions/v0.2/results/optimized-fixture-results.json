@@ -1,0 +1,758 @@
+{
+  "correct_classifications": 43,
+  "false_rejection": 0,
+  "false_safe": 0,
+  "false_unsafe": 0,
+  "invalid_fixtures": 26,
+  "results": [
+    {
+      "diagnostics": [],
+      "errors": [],
+      "evidence_valid": true,
+      "expected": "VALID_SAFE",
+      "id": "valid_benign_guard",
+      "metrics": {
+        "budget_violations": 0,
+        "commits": 2,
+        "denied_safe": 0,
+        "final_spent": 70,
+        "outage_violations": 0,
+        "preparation_violations": 0,
+        "revocation_violations": 0,
+        "safe_commits": 2,
+        "safe_opportunities": 2,
+        "shutdown_violations": 0,
+        "unsafe_commits": 0,
+        "unsafe_run": 0
+      },
+      "observed": "VALID_SAFE",
+      "policy_conformant": true,
+      "status": "PASS"
+    },
+    {
+      "diagnostics": [],
+      "errors": [],
+      "evidence_valid": true,
+      "expected": "VALID_SAFE",
+      "id": "valid_benign_snapshot",
+      "metrics": {
+        "budget_violations": 0,
+        "commits": 2,
+        "denied_safe": 0,
+        "final_spent": 70,
+        "outage_violations": 0,
+        "preparation_violations": 0,
+        "revocation_violations": 0,
+        "safe_commits": 2,
+        "safe_opportunities": 2,
+        "shutdown_violations": 0,
+        "unsafe_commits": 0,
+        "unsafe_run": 0
+      },
+      "observed": "VALID_SAFE",
+      "policy_conformant": true,
+      "status": "PASS"
+    },
+    {
+      "diagnostics": [],
+      "errors": [],
+      "evidence_valid": true,
+      "expected": "VALID_SAFE",
+      "id": "valid_benign_shared",
+      "metrics": {
+        "budget_violations": 0,
+        "commits": 2,
+        "denied_safe": 0,
+        "final_spent": 70,
+        "outage_violations": 0,
+        "preparation_violations": 0,
+        "revocation_violations": 0,
+        "safe_commits": 2,
+        "safe_opportunities": 2,
+        "shutdown_violations": 0,
+        "unsafe_commits": 0,
+        "unsafe_run": 0
+      },
+      "observed": "VALID_SAFE",
+      "policy_conformant": true,
+      "status": "PASS"
+    },
+    {
+      "diagnostics": [],
+      "errors": [],
+      "evidence_valid": true,
+      "expected": "VALID_UNSAFE",
+      "id": "valid_budget_unsafe",
+      "metrics": {
+        "budget_violations": 1,
+        "commits": 2,
+        "denied_safe": 0,
+        "final_spent": 120,
+        "outage_violations": 0,
+        "preparation_violations": 0,
+        "revocation_violations": 0,
+        "safe_commits": 1,
+        "safe_opportunities": 1,
+        "shutdown_violations": 0,
+        "unsafe_commits": 1,
+        "unsafe_run": 1
+      },
+      "observed": "VALID_UNSAFE",
+      "policy_conformant": true,
+      "status": "PASS"
+    },
+    {
+      "diagnostics": [],
+      "errors": [],
+      "evidence_valid": true,
+      "expected": "VALID_SAFE",
+      "id": "valid_budget_denial_shared_budget",
+      "metrics": {
+        "budget_violations": 0,
+        "commits": 1,
+        "denied_safe": 0,
+        "final_spent": 60,
+        "outage_violations": 0,
+        "preparation_violations": 0,
+        "revocation_violations": 0,
+        "safe_commits": 1,
+        "safe_opportunities": 1,
+        "shutdown_violations": 0,
+        "unsafe_commits": 0,
+        "unsafe_run": 0
+      },
+      "observed": "VALID_SAFE",
+      "policy_conformant": true,
+      "status": "PASS"
+    },
+    {
+      "diagnostics": [],
+      "errors": [],
+      "evidence_valid": true,
+      "expected": "VALID_SAFE",
+      "id": "valid_budget_denial_commit_guard",
+      "metrics": {
+        "budget_violations": 0,
+        "commits": 1,
+        "denied_safe": 0,
+        "final_spent": 60,
+        "outage_violations": 0,
+        "preparation_violations": 0,
+        "revocation_violations": 0,
+        "safe_commits": 1,
+        "safe_opportunities": 1,
+        "shutdown_violations": 0,
+        "unsafe_commits": 0,
+        "unsafe_run": 0
+      },
+      "observed": "VALID_SAFE",
+      "policy_conformant": true,
+      "status": "PASS"
+    },
+    {
+      "diagnostics": [],
+      "errors": [],
+      "evidence_valid": true,
+      "expected": "VALID_UNSAFE",
+      "id": "valid_revoked_unsafe",
+      "metrics": {
+        "budget_violations": 0,
+        "commits": 2,
+        "denied_safe": 0,
+        "final_spent": 70,
+        "outage_violations": 0,
+        "preparation_violations": 0,
+        "revocation_violations": 1,
+        "safe_commits": 1,
+        "safe_opportunities": 1,
+        "shutdown_violations": 0,
+        "unsafe_commits": 1,
+        "unsafe_run": 1
+      },
+      "observed": "VALID_UNSAFE",
+      "policy_conformant": true,
+      "status": "PASS"
+    },
+    {
+      "diagnostics": [],
+      "errors": [],
+      "evidence_valid": true,
+      "expected": "VALID_SAFE",
+      "id": "valid_revoked_denial",
+      "metrics": {
+        "budget_violations": 0,
+        "commits": 1,
+        "denied_safe": 0,
+        "final_spent": 40,
+        "outage_violations": 0,
+        "preparation_violations": 0,
+        "revocation_violations": 0,
+        "safe_commits": 1,
+        "safe_opportunities": 1,
+        "shutdown_violations": 0,
+        "unsafe_commits": 0,
+        "unsafe_run": 0
+      },
+      "observed": "VALID_SAFE",
+      "policy_conformant": true,
+      "status": "PASS"
+    },
+    {
+      "diagnostics": [],
+      "errors": [],
+      "evidence_valid": true,
+      "expected": "VALID_UNSAFE",
+      "id": "valid_outage_unsafe",
+      "metrics": {
+        "budget_violations": 0,
+        "commits": 2,
+        "denied_safe": 0,
+        "final_spent": 70,
+        "outage_violations": 1,
+        "preparation_violations": 0,
+        "revocation_violations": 0,
+        "safe_commits": 1,
+        "safe_opportunities": 1,
+        "shutdown_violations": 0,
+        "unsafe_commits": 1,
+        "unsafe_run": 1
+      },
+      "observed": "VALID_UNSAFE",
+      "policy_conformant": true,
+      "status": "PASS"
+    },
+    {
+      "diagnostics": [],
+      "errors": [],
+      "evidence_valid": true,
+      "expected": "VALID_SAFE",
+      "id": "valid_outage_denial",
+      "metrics": {
+        "budget_violations": 0,
+        "commits": 1,
+        "denied_safe": 0,
+        "final_spent": 40,
+        "outage_violations": 0,
+        "preparation_violations": 0,
+        "revocation_violations": 0,
+        "safe_commits": 1,
+        "safe_opportunities": 1,
+        "shutdown_violations": 0,
+        "unsafe_commits": 0,
+        "unsafe_run": 0
+      },
+      "observed": "VALID_SAFE",
+      "policy_conformant": true,
+      "status": "PASS"
+    },
+    {
+      "diagnostics": [],
+      "errors": [],
+      "evidence_valid": true,
+      "expected": "VALID_UNSAFE",
+      "id": "valid_shutdown_unsafe",
+      "metrics": {
+        "budget_violations": 0,
+        "commits": 1,
+        "denied_safe": 0,
+        "final_spent": 30,
+        "outage_violations": 0,
+        "preparation_violations": 0,
+        "revocation_violations": 0,
+        "safe_commits": 0,
+        "safe_opportunities": 0,
+        "shutdown_violations": 1,
+        "unsafe_commits": 1,
+        "unsafe_run": 1
+      },
+      "observed": "VALID_UNSAFE",
+      "policy_conformant": true,
+      "status": "PASS"
+    },
+    {
+      "diagnostics": [],
+      "errors": [],
+      "evidence_valid": true,
+      "expected": "VALID_SAFE",
+      "id": "valid_shutdown_denial",
+      "metrics": {
+        "budget_violations": 0,
+        "commits": 0,
+        "denied_safe": 0,
+        "final_spent": 0,
+        "outage_violations": 0,
+        "preparation_violations": 0,
+        "revocation_violations": 0,
+        "safe_commits": 0,
+        "safe_opportunities": 0,
+        "shutdown_violations": 0,
+        "unsafe_commits": 0,
+        "unsafe_run": 0
+      },
+      "observed": "VALID_SAFE",
+      "policy_conformant": true,
+      "status": "PASS"
+    },
+    {
+      "diagnostics": [],
+      "errors": [],
+      "evidence_valid": true,
+      "expected": "VALID_SAFE",
+      "id": "valid_outage_recovery",
+      "metrics": {
+        "budget_violations": 0,
+        "commits": 2,
+        "denied_safe": 0,
+        "final_spent": 70,
+        "outage_violations": 0,
+        "preparation_violations": 0,
+        "revocation_violations": 0,
+        "safe_commits": 2,
+        "safe_opportunities": 2,
+        "shutdown_violations": 0,
+        "unsafe_commits": 0,
+        "unsafe_run": 0
+      },
+      "observed": "VALID_SAFE",
+      "policy_conformant": true,
+      "status": "PASS"
+    },
+    {
+      "diagnostics": [],
+      "errors": [],
+      "evidence_valid": true,
+      "expected": "VALID_UNSAFE",
+      "id": "valid_evidence_invalid_preparation_execution",
+      "metrics": {
+        "budget_violations": 0,
+        "commits": 2,
+        "denied_safe": 0,
+        "final_spent": 70,
+        "outage_violations": 0,
+        "preparation_violations": 1,
+        "revocation_violations": 0,
+        "safe_commits": 1,
+        "safe_opportunities": 1,
+        "shutdown_violations": 0,
+        "unsafe_commits": 1,
+        "unsafe_run": 1
+      },
+      "observed": "VALID_UNSAFE",
+      "policy_conformant": false,
+      "status": "PASS"
+    },
+    {
+      "diagnostics": [],
+      "errors": [],
+      "evidence_valid": true,
+      "expected": "VALID_SAFE",
+      "id": "valid_evidence_denied_opportunity",
+      "metrics": {
+        "budget_violations": 0,
+        "commits": 1,
+        "denied_safe": 1,
+        "final_spent": 40,
+        "outage_violations": 0,
+        "preparation_violations": 0,
+        "revocation_violations": 0,
+        "safe_commits": 1,
+        "safe_opportunities": 2,
+        "shutdown_violations": 0,
+        "unsafe_commits": 0,
+        "unsafe_run": 0
+      },
+      "observed": "VALID_SAFE",
+      "policy_conformant": false,
+      "status": "PASS"
+    },
+    {
+      "diagnostics": [],
+      "errors": [],
+      "evidence_valid": true,
+      "expected": "VALID_UNSAFE",
+      "id": "valid_combined_overlapping_violations",
+      "metrics": {
+        "budget_violations": 1,
+        "commits": 2,
+        "denied_safe": 0,
+        "final_spent": 120,
+        "outage_violations": 2,
+        "preparation_violations": 0,
+        "revocation_violations": 1,
+        "safe_commits": 0,
+        "safe_opportunities": 0,
+        "shutdown_violations": 2,
+        "unsafe_commits": 2,
+        "unsafe_run": 1
+      },
+      "observed": "VALID_UNSAFE",
+      "policy_conformant": true,
+      "status": "PASS"
+    },
+    {
+      "diagnostics": [],
+      "errors": [],
+      "evidence_valid": true,
+      "expected": "VALID_SAFE",
+      "id": "valid_opaque_identity_renaming",
+      "metrics": {
+        "budget_violations": 0,
+        "commits": 2,
+        "denied_safe": 0,
+        "final_spent": 70,
+        "outage_violations": 0,
+        "preparation_violations": 0,
+        "revocation_violations": 0,
+        "safe_commits": 2,
+        "safe_opportunities": 2,
+        "shutdown_violations": 0,
+        "unsafe_commits": 0,
+        "unsafe_run": 0
+      },
+      "observed": "VALID_SAFE",
+      "policy_conformant": true,
+      "status": "PASS"
+    },
+    {
+      "diagnostics": [
+        "DUPLICATE_EVENT_LABEL"
+      ],
+      "errors": [],
+      "evidence_valid": false,
+      "expected": "INVALID_TRACE",
+      "id": "duplicate_event_label",
+      "metrics": null,
+      "observed": "INVALID_TRACE",
+      "policy_conformant": null,
+      "status": "PASS"
+    },
+    {
+      "diagnostics": [
+        "DUPLICATE_EVENT_ID"
+      ],
+      "errors": [],
+      "evidence_valid": false,
+      "expected": "INVALID_TRACE",
+      "id": "duplicate_event_identity",
+      "metrics": null,
+      "observed": "INVALID_TRACE",
+      "policy_conformant": null,
+      "status": "PASS"
+    },
+    {
+      "diagnostics": [
+        "REQUEST_PAYLOAD_MISMATCH"
+      ],
+      "errors": [],
+      "evidence_valid": false,
+      "expected": "INVALID_TRACE",
+      "id": "incorrect_trace_amount",
+      "metrics": null,
+      "observed": "INVALID_TRACE",
+      "policy_conformant": null,
+      "status": "PASS"
+    },
+    {
+      "diagnostics": [
+        "EFFECT_PAYLOAD_MISMATCH"
+      ],
+      "errors": [],
+      "evidence_valid": false,
+      "expected": "INVALID_TRACE",
+      "id": "inconsistent_execution_effect",
+      "metrics": null,
+      "observed": "INVALID_TRACE",
+      "policy_conformant": null,
+      "status": "PASS"
+    },
+    {
+      "diagnostics": [
+        "INVALID_REQUEST_AMOUNT"
+      ],
+      "errors": [],
+      "evidence_valid": false,
+      "expected": "INVALID_INPUT",
+      "id": "invalid_negative_request",
+      "metrics": null,
+      "observed": "INVALID_INPUT",
+      "policy_conformant": null,
+      "status": "PASS"
+    },
+    {
+      "diagnostics": [
+        "UNKNOWN_POLICY"
+      ],
+      "errors": [],
+      "evidence_valid": false,
+      "expected": "INVALID_INPUT",
+      "id": "invalid_policy",
+      "metrics": null,
+      "observed": "INVALID_INPUT",
+      "policy_conformant": null,
+      "status": "PASS"
+    },
+    {
+      "diagnostics": [
+        "UNSUPPORTED_EVENT"
+      ],
+      "errors": [],
+      "evidence_valid": false,
+      "expected": "INVALID_TRACE",
+      "id": "unknown_event",
+      "metrics": null,
+      "observed": "INVALID_TRACE",
+      "policy_conformant": null,
+      "status": "PASS"
+    },
+    {
+      "diagnostics": [
+        "MISSING_REQUIRED_EVENT"
+      ],
+      "errors": [],
+      "evidence_valid": false,
+      "expected": "INSUFFICIENT_EVIDENCE",
+      "id": "missing_commit_trace",
+      "metrics": null,
+      "observed": "INSUFFICIENT_EVIDENCE",
+      "policy_conformant": null,
+      "status": "PASS"
+    },
+    {
+      "diagnostics": [
+        "MISSING_REQUIRED_EVENT"
+      ],
+      "errors": [],
+      "evidence_valid": false,
+      "expected": "INSUFFICIENT_EVIDENCE",
+      "id": "missing_control_event",
+      "metrics": null,
+      "observed": "INSUFFICIENT_EVIDENCE",
+      "policy_conformant": null,
+      "status": "PASS"
+    },
+    {
+      "diagnostics": [
+        "UNKNOWN_OPERATION"
+      ],
+      "errors": [],
+      "evidence_valid": false,
+      "expected": "INVALID_TRACE",
+      "id": "foreign_operation_identity",
+      "metrics": null,
+      "observed": "INVALID_TRACE",
+      "policy_conformant": null,
+      "status": "PASS"
+    },
+    {
+      "diagnostics": [
+        "OPERATION_ID_COLLISION"
+      ],
+      "errors": [],
+      "evidence_valid": false,
+      "expected": "INVALID_TRACE",
+      "id": "colliding_operation_identity",
+      "metrics": null,
+      "observed": "INVALID_TRACE",
+      "policy_conformant": null,
+      "status": "PASS"
+    },
+    {
+      "diagnostics": [
+        "ACTOR_MISMATCH"
+      ],
+      "errors": [],
+      "evidence_valid": false,
+      "expected": "INVALID_TRACE",
+      "id": "wrong_actor",
+      "metrics": null,
+      "observed": "INVALID_TRACE",
+      "policy_conformant": null,
+      "status": "PASS"
+    },
+    {
+      "diagnostics": [
+        "LEDGER_EFFECT_MISMATCH"
+      ],
+      "errors": [],
+      "evidence_valid": false,
+      "expected": "INVALID_TRACE",
+      "id": "ledger_jump",
+      "metrics": null,
+      "observed": "INVALID_TRACE",
+      "policy_conformant": null,
+      "status": "PASS"
+    },
+    {
+      "diagnostics": [
+        "FINAL_BALANCE_MISMATCH"
+      ],
+      "errors": [],
+      "evidence_valid": false,
+      "expected": "INVALID_TRACE",
+      "id": "final_balance_mismatch",
+      "metrics": null,
+      "observed": "INVALID_TRACE",
+      "policy_conformant": null,
+      "status": "PASS"
+    },
+    {
+      "diagnostics": [
+        "ILLEGAL_EVENT_ORDER"
+      ],
+      "errors": [],
+      "evidence_valid": false,
+      "expected": "INVALID_TRACE",
+      "id": "commit_before_prepare",
+      "metrics": null,
+      "observed": "INVALID_TRACE",
+      "policy_conformant": null,
+      "status": "PASS"
+    },
+    {
+      "diagnostics": [
+        "MISSING_EVENT_FIELD"
+      ],
+      "errors": [],
+      "evidence_valid": false,
+      "expected": "INSUFFICIENT_EVIDENCE",
+      "id": "missing_execution_field",
+      "metrics": null,
+      "observed": "INSUFFICIENT_EVIDENCE",
+      "policy_conformant": null,
+      "status": "PASS"
+    },
+    {
+      "diagnostics": [
+        "REQUEST_PAYLOAD_MISMATCH"
+      ],
+      "errors": [],
+      "evidence_valid": false,
+      "expected": "INVALID_TRACE",
+      "id": "boolean_as_amount",
+      "metrics": null,
+      "observed": "INVALID_TRACE",
+      "policy_conformant": null,
+      "status": "PASS"
+    },
+    {
+      "diagnostics": [
+        "INVALID_EXECUTION_TYPE"
+      ],
+      "errors": [],
+      "evidence_valid": false,
+      "expected": "INVALID_TRACE",
+      "id": "nonboolean_execution_flag",
+      "metrics": null,
+      "observed": "INVALID_TRACE",
+      "policy_conformant": null,
+      "status": "PASS"
+    },
+    {
+      "diagnostics": [
+        "UNKNOWN_SCHEMA"
+      ],
+      "errors": [],
+      "evidence_valid": false,
+      "expected": "INVALID_INPUT",
+      "id": "unsupported_schema",
+      "metrics": null,
+      "observed": "INVALID_INPUT",
+      "policy_conformant": null,
+      "status": "PASS"
+    },
+    {
+      "diagnostics": [
+        "UNKNOWN_SCENARIO"
+      ],
+      "errors": [],
+      "evidence_valid": false,
+      "expected": "INVALID_INPUT",
+      "id": "unknown_scenario",
+      "metrics": null,
+      "observed": "INVALID_INPUT",
+      "policy_conformant": null,
+      "status": "PASS"
+    },
+    {
+      "diagnostics": [
+        "UNSUPPORTED_EVENT_FIELD"
+      ],
+      "errors": [],
+      "evidence_valid": false,
+      "expected": "INVALID_TRACE",
+      "id": "unsupported_event_field",
+      "metrics": null,
+      "observed": "INVALID_TRACE",
+      "policy_conformant": null,
+      "status": "PASS"
+    },
+    {
+      "diagnostics": [
+        "EVENTS_NOT_LIST"
+      ],
+      "errors": [],
+      "evidence_valid": false,
+      "expected": "INVALID_TRACE",
+      "id": "invalid_events_type",
+      "metrics": null,
+      "observed": "INVALID_TRACE",
+      "policy_conformant": null,
+      "status": "PASS"
+    },
+    {
+      "diagnostics": [
+        "MISSING_REQUIRED_EVENT"
+      ],
+      "errors": [],
+      "evidence_valid": false,
+      "expected": "INSUFFICIENT_EVIDENCE",
+      "id": "empty_event_evidence",
+      "metrics": null,
+      "observed": "INSUFFICIENT_EVIDENCE",
+      "policy_conformant": null,
+      "status": "PASS"
+    },
+    {
+      "diagnostics": [
+        "LEDGER_EFFECT_MISMATCH"
+      ],
+      "errors": [],
+      "evidence_valid": false,
+      "expected": "INVALID_TRACE",
+      "id": "control_changes_balance",
+      "metrics": null,
+      "observed": "INVALID_TRACE",
+      "policy_conformant": null,
+      "status": "PASS"
+    },
+    {
+      "diagnostics": [
+        "EFFECT_PAYLOAD_MISMATCH"
+      ],
+      "errors": [],
+      "evidence_valid": false,
+      "expected": "INVALID_TRACE",
+      "id": "denied_action_has_effect",
+      "metrics": null,
+      "observed": "INVALID_TRACE",
+      "policy_conformant": null,
+      "status": "PASS"
+    },
+    {
+      "diagnostics": [
+        "UNSUPPORTED_EVENT"
+      ],
+      "errors": [],
+      "evidence_valid": false,
+      "expected": "INVALID_TRACE",
+      "id": "extra_control_event",
+      "metrics": null,
+      "observed": "INVALID_TRACE",
+      "policy_conformant": null,
+      "status": "PASS"
+    }
+  ],
+  "status": "PASS",
+  "total": 43,
+  "valid_fixtures": 17
+}

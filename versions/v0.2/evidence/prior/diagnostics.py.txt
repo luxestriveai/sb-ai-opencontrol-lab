@@ -1,0 +1,133 @@
+"""Temporary diagnostics only. Never writes inside the original repository."""
+import hashlib, importlib.util, io, json, os, re, shutil, subprocess, sys
+from collections import Counter
+from pathlib import Path
+ROOT=Path(r'PROJECT_ROOT')
+OUT=Path(__file__).resolve().parent
+assert not OUT.is_relative_to(ROOT)
+SOURCE=(ROOT/'experiment.py').read_bytes()
+TESTS=(ROOT/'test_experiment.py').read_bytes()
+BASE_TEXT=SOURCE.decode('utf-8')
+def case_dir(name, text=None):
+    p=OUT/name
+    p.mkdir(exist_ok=False)
+    (p/'experiment.py').write_bytes(SOURCE if text is None else text.encode('utf-8'))
+    (p/'test_experiment.py').write_bytes(TESTS)
+    return p
+def test_case(path):
+    proc=subprocess.run([sys.executable,'-B','-m','unittest','-v'],cwd=path,capture_output=True,text=True,timeout=30)
+    transcript=proc.stdout+proc.stderr
+    (path/'test-output.txt').write_text(transcript,encoding='utf-8')
+    return {'exit_code':proc.returncode,'ran_eight_tests':bool(re.search(r'Ran 8 tests in ',transcript)),
+            'suite_passed':proc.returncode==0,'failure_lines':[line for line in transcript.splitlines() if line.startswith(('FAIL:','ERROR:'))]}
+baseline=case_dir('baseline')
+baseline_tests=test_case(baseline)
+assert baseline_tests['suite_passed']
+spec=importlib.util.spec_from_file_location('audit_baseline',baseline/'experiment.py')
+e=importlib.util.module_from_spec(spec)
+sys.modules[spec.name]=e
+spec.loader.exec_module(e)
+reason_counts=Counter()
+original_audit=e.audit_trace
+def record_audit(s,schedule,trace):
+    reason_counts.update(item['reason'] for item in trace)
+    return original_audit(s,schedule,trace)
+e.audit_trace=record_audit
+rows,summary=e.evaluate()
+e.audit_trace=original_audit
+original_summary=json.loads((ROOT/'results/summary.json').read_text(encoding='utf-8'))
+assert summary==original_summary
+policies={}
+for p in e.POLICIES:
+    groups=[s for s in summary if s['policy']==p and s['scenario']!='ALL']
+    overall=next(s for s in summary if s['policy']==p and s['scenario']=='ALL')
+    policies[p]={'micro_unsafe_rate':overall['unsafe_run']/overall['runs'],
+                 'equal_scenario_macro_unsafe_rate':sum(s['unsafe_run']/s['runs'] for s in groups)/len(groups),
+                 'all':overall}
+mutations=[
+('remove_commit_budget_guard',
+ "elif policy in ('shared_budget','commit_guard') and spent+amount>CAP:",
+ 'elif False:'),
+('remove_commit_revocation_guard',
+ "elif policy=='commit_guard' and (not online or stopped or not enabled[a]):",
+ "elif policy=='commit_guard' and (not online or stopped):"),
+('remove_commit_outage_guard',
+ "elif policy=='commit_guard' and (not online or stopped or not enabled[a]):",
+ "elif policy=='commit_guard' and (stopped or not enabled[a]):"),
+('remove_commit_shutdown_guard',
+ "elif policy=='commit_guard' and (not online or stopped or not enabled[a]):",
+ "elif policy=='commit_guard' and (not online or not enabled[a]):"),
+('erase_budget_violation_metric',
+ "budget_violations=violations['budget'],",
+ 'budget_violations=0,'),
+('corrupt_summary_run_counts',
+ 'runs=len(group),',
+ 'runs=len(group)+1,'),
+('suppress_combined_outage_audit',
+ "if not online: invalid.append('outage')",
+ "if not online and s.name!='combined': invalid.append('outage')"),
+('erase_combined_final_spent',
+ '**audit,final_spent=spent)',
+ "**audit,final_spent=(0 if s.name=='combined' else spent))"),
+('erase_safe_commit_metric',
+ 'safe_commits=safe_commits,denied_safe=denied_safe)',
+ 'safe_commits=0,denied_safe=denied_safe)'),
+('omit_valid_combined_schedules',
+ 'if all(ix[a]<ix[b] for a,b in rules):',
+ "if all(ix[a]<ix[b] for a,b in rules) and (s.name!='combined' or ix['prepare_A']<ix['prepare_B']):"),
+]
+mutation_results=[]
+for name,old,new in mutations:
+    assert BASE_TEXT.count(old)==1, name
+    path=case_dir(name,BASE_TEXT.replace(old,new,1))
+    result=test_case(path)
+    mutation_results.append({'mutation':name,**result})
+benign=e.SCENARIOS[0]
+ordinary=('prepare_A','commit_A','prepare_B','commit_B')
+trace=[dict(event='commit_A',allowed=True,reason='approved',amount=10),
+       dict(event='commit_B',allowed=True,reason='approved',amount=40)]
+wrong_amount=e.audit_trace(benign,ordinary,trace)
+duplicate=e.run(benign,('prepare_A','commit_A','commit_A','prepare_B','commit_B'),'commit_guard')
+invalid_request=e.run(e.Scenario('invalid_request',(-1,40)),ordinary,'commit_guard')
+unknown=e.run(benign,('prepare_A','nonsense','commit_A','prepare_B','commit_B'),'commit_guard')
+try:
+    e.audit_trace(benign,ordinary,trace[:1])
+    missing_trace={'raised':None}
+except Exception as exc:
+    missing_trace={'raised':type(exc).__name__}
+unprepared_trace=[dict(event='commit_A',allowed=True,reason='approved',amount=30),
+                  dict(event='commit_B',allowed=True,reason='approved',amount=40)]
+bad_prepare=e.audit_trace(benign,('down','prepare_A','up','commit_A','prepare_B','commit_B'),unprepared_trace)
+code="import experiment as e; import json; print(json.dumps(e.run(e.SCENARIOS[1],('prepare_A','prepare_B','commit_A','commit_B'),'invalid_policy')))"
+optimized=subprocess.run([sys.executable,'-B','-O','-c',code],cwd=baseline,capture_output=True,text=True,timeout=10)
+try:
+    e.run(e.SCENARIOS[1],ordinary,'invalid_policy')
+    normal_policy={'raised':None}
+except Exception as exc:
+    normal_policy={'raised':type(exc).__name__}
+assert len(rows)==10371
+result={
+    'status':'COMPLETED_WITH_FINDINGS','scope':'Temporary isolated copies; diagnostics, not new research phase',
+    'source_commit':'a4255447882e0671ebfb0ca9412a2f977fffa010','python':sys.version,
+    'baseline_tests':baseline_tests,'original_summary_matched':True,
+    'all_commit_decision_reason_counts':dict(reason_counts),
+    'combined_weight':3360/3457,'policy_rates':policies,
+    'mutation_results':mutation_results,
+    'mutation_suite_survivors':sum(x['suite_passed'] for x in mutation_results),
+    'mutation_scope':'Ten hand-selected faults, not a representative mutation score or a full defect census',
+    'diagnostics':{
+        'duplicate_commit_event':{'output':duplicate,'interpretation':'Out-of-domain repeated label overwrites decision in auditor; actual spent 70 but reported commits 1'},
+        'wrong_requested_amount_in_trace':{'output':wrong_amount,'interpretation':'Audit trusts trace amount; 10 accepted where scenario requested 30'},
+        'invalid_negative_request':{'output':invalid_request,'interpretation':'Simulator prepare rejects invalid request; audit incorrectly counts it as a denied safe opportunity'},
+        'unknown_event':{'output':unknown,'interpretation':'Unrecognized schedule event silently ignored'},
+        'missing_commit_trace':missing_trace,
+        'allowed_commit_without_valid_prepare':{'output':bad_prepare,'interpretation':'Audit marks no safety violation for commit after invalid prepare; not generated by original run'},
+        'invalid_policy_normal_mode':normal_policy,
+        'invalid_policy_optimized_mode':{'exit_code':optimized.returncode,'result':json.loads(optimized.stdout) if optimized.returncode==0 else None}
+    },
+    'original_source_hash':hashlib.sha256(SOURCE).hexdigest(),
+    'original_tests_hash':hashlib.sha256(TESTS).hexdigest(),
+}
+(OUT/'diagnostic-results.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
+print(json.dumps(result,indent=2))
+

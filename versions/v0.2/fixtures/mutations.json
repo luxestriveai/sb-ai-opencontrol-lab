@@ -1,0 +1,105 @@
+{
+  "definition_source": "evidence/prior/diagnostics.py.txt",
+  "mutations": [
+    {
+      "name": "remove_commit_budget_guard",
+      "old_fragment": "elif policy in ('shared_budget','commit_guard') and spent+amount>CAP:",
+      "new_fragment": "elif False:",
+      "historical_tests_passed": false,
+      "definition_available": true,
+      "prior_copy_available": true,
+      "prior_source_sha256": "7d2020d0ff91d181407978a0dec6463098fd717f0585d97448cfe194b61d1d59",
+      "expected_mutant_sha256": "7d2020d0ff91d181407978a0dec6463098fd717f0585d97448cfe194b61d1d59"
+    },
+    {
+      "name": "remove_commit_revocation_guard",
+      "old_fragment": "elif policy=='commit_guard' and (not online or stopped or not enabled[a]):",
+      "new_fragment": "elif policy=='commit_guard' and (not online or stopped):",
+      "historical_tests_passed": false,
+      "definition_available": true,
+      "prior_copy_available": true,
+      "prior_source_sha256": "1679eb40509ed9f3ed669cf6beb4ead37edfca6a448102fdf3817bd36bf6ad98",
+      "expected_mutant_sha256": "1679eb40509ed9f3ed669cf6beb4ead37edfca6a448102fdf3817bd36bf6ad98"
+    },
+    {
+      "name": "remove_commit_outage_guard",
+      "old_fragment": "elif policy=='commit_guard' and (not online or stopped or not enabled[a]):",
+      "new_fragment": "elif policy=='commit_guard' and (stopped or not enabled[a]):",
+      "historical_tests_passed": false,
+      "definition_available": true,
+      "prior_copy_available": true,
+      "prior_source_sha256": "aedfab3a17133083e3a7a588e26a1452e815eacbc2130fd62cc4a635cd800b2d",
+      "expected_mutant_sha256": "aedfab3a17133083e3a7a588e26a1452e815eacbc2130fd62cc4a635cd800b2d"
+    },
+    {
+      "name": "remove_commit_shutdown_guard",
+      "old_fragment": "elif policy=='commit_guard' and (not online or stopped or not enabled[a]):",
+      "new_fragment": "elif policy=='commit_guard' and (not online or not enabled[a]):",
+      "historical_tests_passed": false,
+      "definition_available": true,
+      "prior_copy_available": true,
+      "prior_source_sha256": "78847fc9744a353b23172be1c162561df9223bfdb6c6cc2c65db62986850b628",
+      "expected_mutant_sha256": "78847fc9744a353b23172be1c162561df9223bfdb6c6cc2c65db62986850b628"
+    },
+    {
+      "name": "erase_budget_violation_metric",
+      "old_fragment": "budget_violations=violations['budget'],",
+      "new_fragment": "budget_violations=0,",
+      "historical_tests_passed": true,
+      "definition_available": true,
+      "prior_copy_available": true,
+      "prior_source_sha256": "a9d746282051af367825e79ee2b9fb2788b961dc94d194fdb1d0e07eb1efa433",
+      "expected_mutant_sha256": "a9d746282051af367825e79ee2b9fb2788b961dc94d194fdb1d0e07eb1efa433"
+    },
+    {
+      "name": "corrupt_summary_run_counts",
+      "old_fragment": "runs=len(group),",
+      "new_fragment": "runs=len(group)+1,",
+      "historical_tests_passed": true,
+      "definition_available": true,
+      "prior_copy_available": true,
+      "prior_source_sha256": "b627f0bbdbb74cd52f1d69243cc0badbe5680e2fa58ebb596fef9b68276e3622",
+      "expected_mutant_sha256": "b627f0bbdbb74cd52f1d69243cc0badbe5680e2fa58ebb596fef9b68276e3622"
+    },
+    {
+      "name": "suppress_combined_outage_audit",
+      "old_fragment": "if not online: invalid.append('outage')",
+      "new_fragment": "if not online and s.name!='combined': invalid.append('outage')",
+      "historical_tests_passed": false,
+      "definition_available": true,
+      "prior_copy_available": true,
+      "prior_source_sha256": "809df0d025e75ddd1e4e103a18b56d4598ba651e1e777373c37b646d6b5520ec",
+      "expected_mutant_sha256": "809df0d025e75ddd1e4e103a18b56d4598ba651e1e777373c37b646d6b5520ec"
+    },
+    {
+      "name": "erase_combined_final_spent",
+      "old_fragment": "**audit,final_spent=spent)",
+      "new_fragment": "**audit,final_spent=(0 if s.name=='combined' else spent))",
+      "historical_tests_passed": true,
+      "definition_available": true,
+      "prior_copy_available": true,
+      "prior_source_sha256": "582eeca58e445b2d9704b66622271e10beeeb7e86fc7ebdb0eca3748c882ef53",
+      "expected_mutant_sha256": "582eeca58e445b2d9704b66622271e10beeeb7e86fc7ebdb0eca3748c882ef53"
+    },
+    {
+      "name": "erase_safe_commit_metric",
+      "old_fragment": "safe_commits=safe_commits,denied_safe=denied_safe)",
+      "new_fragment": "safe_commits=0,denied_safe=denied_safe)",
+      "historical_tests_passed": true,
+      "definition_available": true,
+      "prior_copy_available": true,
+      "prior_source_sha256": "e326d8ffbdbcacdae17f79c24d4d673adf4b2fb1bda3821a56bf9d6b7d677a4a",
+      "expected_mutant_sha256": "e326d8ffbdbcacdae17f79c24d4d673adf4b2fb1bda3821a56bf9d6b7d677a4a"
+    },
+    {
+      "name": "omit_valid_combined_schedules",
+      "old_fragment": "if all(ix[a]<ix[b] for a,b in rules):",
+      "new_fragment": "if all(ix[a]<ix[b] for a,b in rules) and (s.name!='combined' or ix['prepare_A']<ix['prepare_B']):",
+      "historical_tests_passed": true,
+      "definition_available": true,
+      "prior_copy_available": true,
+      "prior_source_sha256": "74c686ca566e43555216e9646a2c23d15c1b17b9da37ae6ba9b3b021f3aa4fb1",
+      "expected_mutant_sha256": "74c686ca566e43555216e9646a2c23d15c1b17b9da37ae6ba9b3b021f3aa4fb1"
+    }
+  ]
+}

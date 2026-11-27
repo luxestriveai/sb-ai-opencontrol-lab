@@ -1,0 +1,45 @@
+{
+  "status": "PASS",
+  "issue_counts": {},
+  "issue_examples": [],
+  "classifications": {
+    "VALID_SAFE": 6891,
+    "VALID_UNSAFE": 3480
+  },
+  "expected_run_keys": 10371,
+  "observed_run_keys": 10371,
+  "observed_trace_keys": 10371,
+  "numeric_comparisons": 114081,
+  "coverage": {
+    "benign": {
+      "expected_schedules": 6,
+      "observed_run_keys": 18,
+      "observed_trace_keys": 18
+    },
+    "aggregate_limit": {
+      "expected_schedules": 6,
+      "observed_run_keys": 18,
+      "observed_trace_keys": 18
+    },
+    "revocation": {
+      "expected_schedules": 20,
+      "observed_run_keys": 60,
+      "observed_trace_keys": 60
+    },
+    "authority_outage": {
+      "expected_schedules": 45,
+      "observed_run_keys": 135,
+      "observed_trace_keys": 135
+    },
+    "shutdown": {
+      "expected_schedules": 20,
+      "observed_run_keys": 60,
+      "observed_trace_keys": 60
+    },
+    "combined": {
+      "expected_schedules": 3360,
+      "observed_run_keys": 10080,
+      "observed_trace_keys": 10080
+    }
+  }
+}

@@ -1,0 +1,2812 @@
+{
+  "contract_version": 1,
+  "definition_stage": "Before verifier implementation/execution",
+  "purpose": "Fixed development-visible diagnostic corpus; not held-out or external validation",
+  "valid_fixture_count": 17,
+  "invalid_fixture_count": 26,
+  "fixtures": [
+    {
+      "id": "valid_benign_guard",
+      "evidence_valid": true,
+      "expected_classification": "VALID_SAFE",
+      "expected_metrics": {
+        "commits": 2,
+        "safe_commits": 2,
+        "safe_opportunities": 2,
+        "denied_safe": 0,
+        "unsafe_run": 0,
+        "final_spent": 70
+      },
+      "expected_policy_conformant": true,
+      "trace": {
+        "schema": "opencontrol/0.2",
+        "scenario": "benign",
+        "policy": "commit_guard",
+        "requests": {
+          "A": 30,
+          "B": 40
+        },
+        "events": [
+          {
+            "id": "event-0",
+            "event": "prepare_A",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-1",
+            "event": "commit_A",
+            "balance_before": 0,
+            "balance_after": 30,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "executed": true,
+            "effect_amount": 30,
+            "reason": "approved"
+          },
+          {
+            "id": "event-2",
+            "event": "prepare_B",
+            "balance_before": 30,
+            "balance_after": 30,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-3",
+            "event": "commit_B",
+            "balance_before": 30,
+            "balance_after": 70,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "executed": true,
+            "effect_amount": 40,
+            "reason": "approved"
+          }
+        ],
+        "observed_final_balance": 70
+      }
+    },
+    {
+      "id": "valid_benign_snapshot",
+      "evidence_valid": true,
+      "expected_classification": "VALID_SAFE",
+      "expected_metrics": {
+        "commits": 2,
+        "safe_commits": 2,
+        "unsafe_run": 0,
+        "final_spent": 70
+      },
+      "expected_policy_conformant": true,
+      "trace": {
+        "schema": "opencontrol/0.2",
+        "scenario": "benign",
+        "policy": "snapshot",
+        "requests": {
+          "A": 30,
+          "B": 40
+        },
+        "events": [
+          {
+            "id": "event-0",
+            "event": "prepare_A",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-1",
+            "event": "commit_A",
+            "balance_before": 0,
+            "balance_after": 30,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "executed": true,
+            "effect_amount": 30,
+            "reason": "approved"
+          },
+          {
+            "id": "event-2",
+            "event": "prepare_B",
+            "balance_before": 30,
+            "balance_after": 30,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-3",
+            "event": "commit_B",
+            "balance_before": 30,
+            "balance_after": 70,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "executed": true,
+            "effect_amount": 40,
+            "reason": "approved"
+          }
+        ],
+        "observed_final_balance": 70
+      }
+    },
+    {
+      "id": "valid_benign_shared",
+      "evidence_valid": true,
+      "expected_classification": "VALID_SAFE",
+      "expected_metrics": {
+        "commits": 2,
+        "safe_commits": 2,
+        "unsafe_run": 0,
+        "final_spent": 70
+      },
+      "expected_policy_conformant": true,
+      "trace": {
+        "schema": "opencontrol/0.2",
+        "scenario": "benign",
+        "policy": "shared_budget",
+        "requests": {
+          "A": 30,
+          "B": 40
+        },
+        "events": [
+          {
+            "id": "event-0",
+            "event": "prepare_A",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-1",
+            "event": "commit_A",
+            "balance_before": 0,
+            "balance_after": 30,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "executed": true,
+            "effect_amount": 30,
+            "reason": "approved"
+          },
+          {
+            "id": "event-2",
+            "event": "prepare_B",
+            "balance_before": 30,
+            "balance_after": 30,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-3",
+            "event": "commit_B",
+            "balance_before": 30,
+            "balance_after": 70,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "executed": true,
+            "effect_amount": 40,
+            "reason": "approved"
+          }
+        ],
+        "observed_final_balance": 70
+      }
+    },
+    {
+      "id": "valid_budget_unsafe",
+      "evidence_valid": true,
+      "expected_classification": "VALID_UNSAFE",
+      "expected_metrics": {
+        "commits": 2,
+        "safe_commits": 1,
+        "unsafe_commits": 1,
+        "budget_violations": 1,
+        "final_spent": 120
+      },
+      "expected_policy_conformant": true,
+      "trace": {
+        "schema": "opencontrol/0.2",
+        "scenario": "aggregate_limit",
+        "policy": "snapshot",
+        "requests": {
+          "A": 60,
+          "B": 60
+        },
+        "events": [
+          {
+            "id": "event-0",
+            "event": "prepare_A",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 60,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-1",
+            "event": "prepare_B",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 60,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-2",
+            "event": "commit_A",
+            "balance_before": 0,
+            "balance_after": 60,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 60,
+            "executed": true,
+            "effect_amount": 60,
+            "reason": "approved"
+          },
+          {
+            "id": "event-3",
+            "event": "commit_B",
+            "balance_before": 60,
+            "balance_after": 120,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 60,
+            "executed": true,
+            "effect_amount": 60,
+            "reason": "approved"
+          }
+        ],
+        "observed_final_balance": 120
+      }
+    },
+    {
+      "id": "valid_budget_denial_shared_budget",
+      "evidence_valid": true,
+      "expected_classification": "VALID_SAFE",
+      "expected_metrics": {
+        "commits": 1,
+        "safe_commits": 1,
+        "safe_opportunities": 1,
+        "denied_safe": 0,
+        "final_spent": 60
+      },
+      "expected_policy_conformant": true,
+      "trace": {
+        "schema": "opencontrol/0.2",
+        "scenario": "aggregate_limit",
+        "policy": "shared_budget",
+        "requests": {
+          "A": 60,
+          "B": 60
+        },
+        "events": [
+          {
+            "id": "event-0",
+            "event": "prepare_A",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 60,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-1",
+            "event": "prepare_B",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 60,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-2",
+            "event": "commit_A",
+            "balance_before": 0,
+            "balance_after": 60,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 60,
+            "executed": true,
+            "effect_amount": 60,
+            "reason": "approved"
+          },
+          {
+            "id": "event-3",
+            "event": "commit_B",
+            "balance_before": 60,
+            "balance_after": 60,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 60,
+            "executed": false,
+            "effect_amount": 0,
+            "reason": "budget"
+          }
+        ],
+        "observed_final_balance": 60
+      }
+    },
+    {
+      "id": "valid_budget_denial_commit_guard",
+      "evidence_valid": true,
+      "expected_classification": "VALID_SAFE",
+      "expected_metrics": {
+        "commits": 1,
+        "safe_commits": 1,
+        "safe_opportunities": 1,
+        "denied_safe": 0,
+        "final_spent": 60
+      },
+      "expected_policy_conformant": true,
+      "trace": {
+        "schema": "opencontrol/0.2",
+        "scenario": "aggregate_limit",
+        "policy": "commit_guard",
+        "requests": {
+          "A": 60,
+          "B": 60
+        },
+        "events": [
+          {
+            "id": "event-0",
+            "event": "prepare_A",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 60,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-1",
+            "event": "prepare_B",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 60,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-2",
+            "event": "commit_A",
+            "balance_before": 0,
+            "balance_after": 60,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 60,
+            "executed": true,
+            "effect_amount": 60,
+            "reason": "approved"
+          },
+          {
+            "id": "event-3",
+            "event": "commit_B",
+            "balance_before": 60,
+            "balance_after": 60,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 60,
+            "executed": false,
+            "effect_amount": 0,
+            "reason": "budget"
+          }
+        ],
+        "observed_final_balance": 60
+      }
+    },
+    {
+      "id": "valid_revoked_unsafe",
+      "evidence_valid": true,
+      "expected_classification": "VALID_UNSAFE",
+      "expected_metrics": {
+        "revocation_violations": 1,
+        "unsafe_commits": 1,
+        "safe_commits": 1,
+        "final_spent": 70
+      },
+      "expected_policy_conformant": true,
+      "trace": {
+        "schema": "opencontrol/0.2",
+        "scenario": "revocation",
+        "policy": "snapshot",
+        "requests": {
+          "A": 30,
+          "B": 40
+        },
+        "events": [
+          {
+            "id": "event-0",
+            "event": "prepare_A",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-1",
+            "event": "revoke_A",
+            "balance_before": 0,
+            "balance_after": 0
+          },
+          {
+            "id": "event-2",
+            "event": "commit_A",
+            "balance_before": 0,
+            "balance_after": 30,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "executed": true,
+            "effect_amount": 30,
+            "reason": "approved"
+          },
+          {
+            "id": "event-3",
+            "event": "prepare_B",
+            "balance_before": 30,
+            "balance_after": 30,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-4",
+            "event": "commit_B",
+            "balance_before": 30,
+            "balance_after": 70,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "executed": true,
+            "effect_amount": 40,
+            "reason": "approved"
+          }
+        ],
+        "observed_final_balance": 70
+      }
+    },
+    {
+      "id": "valid_revoked_denial",
+      "evidence_valid": true,
+      "expected_classification": "VALID_SAFE",
+      "expected_metrics": {
+        "commits": 1,
+        "safe_commits": 1,
+        "final_spent": 40
+      },
+      "expected_policy_conformant": true,
+      "trace": {
+        "schema": "opencontrol/0.2",
+        "scenario": "revocation",
+        "policy": "commit_guard",
+        "requests": {
+          "A": 30,
+          "B": 40
+        },
+        "events": [
+          {
+            "id": "event-0",
+            "event": "prepare_A",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-1",
+            "event": "revoke_A",
+            "balance_before": 0,
+            "balance_after": 0
+          },
+          {
+            "id": "event-2",
+            "event": "commit_A",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "executed": false,
+            "effect_amount": 0,
+            "reason": "authority"
+          },
+          {
+            "id": "event-3",
+            "event": "prepare_B",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-4",
+            "event": "commit_B",
+            "balance_before": 0,
+            "balance_after": 40,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "executed": true,
+            "effect_amount": 40,
+            "reason": "approved"
+          }
+        ],
+        "observed_final_balance": 40
+      }
+    },
+    {
+      "id": "valid_outage_unsafe",
+      "evidence_valid": true,
+      "expected_classification": "VALID_UNSAFE",
+      "expected_metrics": {
+        "outage_violations": 1,
+        "unsafe_commits": 1,
+        "safe_commits": 1,
+        "final_spent": 70
+      },
+      "expected_policy_conformant": true,
+      "trace": {
+        "schema": "opencontrol/0.2",
+        "scenario": "authority_outage",
+        "policy": "shared_budget",
+        "requests": {
+          "A": 30,
+          "B": 40
+        },
+        "events": [
+          {
+            "id": "event-0",
+            "event": "prepare_A",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-1",
+            "event": "down",
+            "balance_before": 0,
+            "balance_after": 0
+          },
+          {
+            "id": "event-2",
+            "event": "commit_A",
+            "balance_before": 0,
+            "balance_after": 30,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "executed": true,
+            "effect_amount": 30,
+            "reason": "approved"
+          },
+          {
+            "id": "event-3",
+            "event": "up",
+            "balance_before": 30,
+            "balance_after": 30
+          },
+          {
+            "id": "event-4",
+            "event": "prepare_B",
+            "balance_before": 30,
+            "balance_after": 30,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-5",
+            "event": "commit_B",
+            "balance_before": 30,
+            "balance_after": 70,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "executed": true,
+            "effect_amount": 40,
+            "reason": "approved"
+          }
+        ],
+        "observed_final_balance": 70
+      }
+    },
+    {
+      "id": "valid_outage_denial",
+      "evidence_valid": true,
+      "expected_classification": "VALID_SAFE",
+      "expected_metrics": {
+        "commits": 1,
+        "safe_commits": 1,
+        "final_spent": 40
+      },
+      "expected_policy_conformant": true,
+      "trace": {
+        "schema": "opencontrol/0.2",
+        "scenario": "authority_outage",
+        "policy": "commit_guard",
+        "requests": {
+          "A": 30,
+          "B": 40
+        },
+        "events": [
+          {
+            "id": "event-0",
+            "event": "prepare_A",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-1",
+            "event": "down",
+            "balance_before": 0,
+            "balance_after": 0
+          },
+          {
+            "id": "event-2",
+            "event": "commit_A",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "executed": false,
+            "effect_amount": 0,
+            "reason": "authority"
+          },
+          {
+            "id": "event-3",
+            "event": "up",
+            "balance_before": 0,
+            "balance_after": 0
+          },
+          {
+            "id": "event-4",
+            "event": "prepare_B",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-5",
+            "event": "commit_B",
+            "balance_before": 0,
+            "balance_after": 40,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "executed": true,
+            "effect_amount": 40,
+            "reason": "approved"
+          }
+        ],
+        "observed_final_balance": 40
+      }
+    },
+    {
+      "id": "valid_shutdown_unsafe",
+      "evidence_valid": true,
+      "expected_classification": "VALID_UNSAFE",
+      "expected_metrics": {
+        "shutdown_violations": 1,
+        "unsafe_commits": 1,
+        "commits": 1,
+        "safe_commits": 0,
+        "final_spent": 30
+      },
+      "expected_policy_conformant": true,
+      "trace": {
+        "schema": "opencontrol/0.2",
+        "scenario": "shutdown",
+        "policy": "snapshot",
+        "requests": {
+          "A": 30,
+          "B": 40
+        },
+        "events": [
+          {
+            "id": "event-0",
+            "event": "prepare_A",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-1",
+            "event": "stop",
+            "balance_before": 0,
+            "balance_after": 0
+          },
+          {
+            "id": "event-2",
+            "event": "commit_A",
+            "balance_before": 0,
+            "balance_after": 30,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "executed": true,
+            "effect_amount": 30,
+            "reason": "approved"
+          },
+          {
+            "id": "event-3",
+            "event": "prepare_B",
+            "balance_before": 30,
+            "balance_after": 30,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "ticket_issued": false
+          },
+          {
+            "id": "event-4",
+            "event": "commit_B",
+            "balance_before": 30,
+            "balance_after": 30,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "executed": false,
+            "effect_amount": 0,
+            "reason": "no_ticket"
+          }
+        ],
+        "observed_final_balance": 30
+      }
+    },
+    {
+      "id": "valid_shutdown_denial",
+      "evidence_valid": true,
+      "expected_classification": "VALID_SAFE",
+      "expected_metrics": {
+        "commits": 0,
+        "safe_commits": 0,
+        "denied_safe": 0,
+        "final_spent": 0
+      },
+      "expected_policy_conformant": true,
+      "trace": {
+        "schema": "opencontrol/0.2",
+        "scenario": "shutdown",
+        "policy": "commit_guard",
+        "requests": {
+          "A": 30,
+          "B": 40
+        },
+        "events": [
+          {
+            "id": "event-0",
+            "event": "prepare_A",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-1",
+            "event": "stop",
+            "balance_before": 0,
+            "balance_after": 0
+          },
+          {
+            "id": "event-2",
+            "event": "commit_A",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "executed": false,
+            "effect_amount": 0,
+            "reason": "authority"
+          },
+          {
+            "id": "event-3",
+            "event": "prepare_B",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "ticket_issued": false
+          },
+          {
+            "id": "event-4",
+            "event": "commit_B",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "executed": false,
+            "effect_amount": 0,
+            "reason": "no_ticket"
+          }
+        ],
+        "observed_final_balance": 0
+      }
+    },
+    {
+      "id": "valid_outage_recovery",
+      "evidence_valid": true,
+      "expected_classification": "VALID_SAFE",
+      "expected_metrics": {
+        "commits": 2,
+        "safe_commits": 2,
+        "final_spent": 70
+      },
+      "expected_policy_conformant": true,
+      "trace": {
+        "schema": "opencontrol/0.2",
+        "scenario": "authority_outage",
+        "policy": "commit_guard",
+        "requests": {
+          "A": 30,
+          "B": 40
+        },
+        "events": [
+          {
+            "id": "event-0",
+            "event": "prepare_A",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-1",
+            "event": "down",
+            "balance_before": 0,
+            "balance_after": 0
+          },
+          {
+            "id": "event-2",
+            "event": "up",
+            "balance_before": 0,
+            "balance_after": 0
+          },
+          {
+            "id": "event-3",
+            "event": "commit_A",
+            "balance_before": 0,
+            "balance_after": 30,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "executed": true,
+            "effect_amount": 30,
+            "reason": "approved"
+          },
+          {
+            "id": "event-4",
+            "event": "prepare_B",
+            "balance_before": 30,
+            "balance_after": 30,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-5",
+            "event": "commit_B",
+            "balance_before": 30,
+            "balance_after": 70,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "executed": true,
+            "effect_amount": 40,
+            "reason": "approved"
+          }
+        ],
+        "observed_final_balance": 70
+      }
+    },
+    {
+      "id": "valid_evidence_invalid_preparation_execution",
+      "evidence_valid": true,
+      "expected_classification": "VALID_UNSAFE",
+      "expected_metrics": {
+        "preparation_violations": 1,
+        "unsafe_commits": 1,
+        "commits": 2,
+        "safe_commits": 1,
+        "safe_opportunities": 1,
+        "final_spent": 70
+      },
+      "expected_policy_conformant": false,
+      "trace": {
+        "schema": "opencontrol/0.2",
+        "scenario": "authority_outage",
+        "policy": "commit_guard",
+        "requests": {
+          "A": 30,
+          "B": 40
+        },
+        "events": [
+          {
+            "id": "event-0",
+            "event": "prepare_A",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-1",
+            "event": "down",
+            "balance_before": 0,
+            "balance_after": 0
+          },
+          {
+            "id": "event-2",
+            "event": "prepare_B",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "ticket_issued": false
+          },
+          {
+            "id": "event-3",
+            "event": "up",
+            "balance_before": 0,
+            "balance_after": 0
+          },
+          {
+            "id": "event-4",
+            "event": "commit_A",
+            "balance_before": 0,
+            "balance_after": 30,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "executed": true,
+            "effect_amount": 30,
+            "reason": "approved"
+          },
+          {
+            "id": "event-5",
+            "event": "commit_B",
+            "balance_before": 30,
+            "balance_after": 70,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "executed": true,
+            "effect_amount": 40,
+            "reason": "approved"
+          }
+        ],
+        "observed_final_balance": 70
+      }
+    },
+    {
+      "id": "valid_evidence_denied_opportunity",
+      "evidence_valid": true,
+      "expected_classification": "VALID_SAFE",
+      "expected_metrics": {
+        "commits": 1,
+        "safe_commits": 1,
+        "safe_opportunities": 2,
+        "denied_safe": 1,
+        "final_spent": 40
+      },
+      "expected_policy_conformant": false,
+      "trace": {
+        "schema": "opencontrol/0.2",
+        "scenario": "benign",
+        "policy": "commit_guard",
+        "requests": {
+          "A": 30,
+          "B": 40
+        },
+        "events": [
+          {
+            "id": "event-0",
+            "event": "prepare_A",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-1",
+            "event": "commit_A",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "executed": false,
+            "effect_amount": 0,
+            "reason": "declined"
+          },
+          {
+            "id": "event-2",
+            "event": "prepare_B",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-3",
+            "event": "commit_B",
+            "balance_before": 0,
+            "balance_after": 40,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "executed": true,
+            "effect_amount": 40,
+            "reason": "approved"
+          }
+        ],
+        "observed_final_balance": 40
+      }
+    },
+    {
+      "id": "valid_combined_overlapping_violations",
+      "evidence_valid": true,
+      "expected_classification": "VALID_UNSAFE",
+      "expected_metrics": {
+        "budget_violations": 1,
+        "revocation_violations": 1,
+        "outage_violations": 2,
+        "shutdown_violations": 2,
+        "unsafe_commits": 2,
+        "safe_commits": 0,
+        "final_spent": 120
+      },
+      "expected_policy_conformant": true,
+      "trace": {
+        "schema": "opencontrol/0.2",
+        "scenario": "combined",
+        "policy": "snapshot",
+        "requests": {
+          "A": 60,
+          "B": 60
+        },
+        "events": [
+          {
+            "id": "event-0",
+            "event": "prepare_A",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 60,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-1",
+            "event": "prepare_B",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 60,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-2",
+            "event": "down",
+            "balance_before": 0,
+            "balance_after": 0
+          },
+          {
+            "id": "event-3",
+            "event": "revoke_A",
+            "balance_before": 0,
+            "balance_after": 0
+          },
+          {
+            "id": "event-4",
+            "event": "stop",
+            "balance_before": 0,
+            "balance_after": 0
+          },
+          {
+            "id": "event-5",
+            "event": "commit_A",
+            "balance_before": 0,
+            "balance_after": 60,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 60,
+            "executed": true,
+            "effect_amount": 60,
+            "reason": "approved"
+          },
+          {
+            "id": "event-6",
+            "event": "commit_B",
+            "balance_before": 60,
+            "balance_after": 120,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 60,
+            "executed": true,
+            "effect_amount": 60,
+            "reason": "approved"
+          },
+          {
+            "id": "event-7",
+            "event": "up",
+            "balance_before": 120,
+            "balance_after": 120
+          }
+        ],
+        "observed_final_balance": 120
+      }
+    },
+    {
+      "id": "valid_opaque_identity_renaming",
+      "evidence_valid": true,
+      "expected_classification": "VALID_SAFE",
+      "expected_metrics": {
+        "commits": 2,
+        "safe_commits": 2,
+        "safe_opportunities": 2,
+        "denied_safe": 0,
+        "unsafe_run": 0,
+        "final_spent": 70
+      },
+      "expected_policy_conformant": true,
+      "trace": {
+        "schema": "opencontrol/0.2",
+        "scenario": "benign",
+        "policy": "commit_guard",
+        "requests": {
+          "A": 30,
+          "B": 40
+        },
+        "events": [
+          {
+            "id": "opaque-100",
+            "event": "prepare_A",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "opaque-alpha",
+            "actor": "A",
+            "amount": 30,
+            "ticket_issued": true
+          },
+          {
+            "id": "opaque-99",
+            "event": "commit_A",
+            "balance_before": 0,
+            "balance_after": 30,
+            "operation_id": "opaque-alpha",
+            "actor": "A",
+            "amount": 30,
+            "executed": true,
+            "effect_amount": 30,
+            "reason": "approved"
+          },
+          {
+            "id": "opaque-98",
+            "event": "prepare_B",
+            "balance_before": 30,
+            "balance_after": 30,
+            "operation_id": "opaque-beta",
+            "actor": "B",
+            "amount": 40,
+            "ticket_issued": true
+          },
+          {
+            "id": "opaque-97",
+            "event": "commit_B",
+            "balance_before": 30,
+            "balance_after": 70,
+            "operation_id": "opaque-beta",
+            "actor": "B",
+            "amount": 40,
+            "executed": true,
+            "effect_amount": 40,
+            "reason": "approved"
+          }
+        ],
+        "observed_final_balance": 70
+      }
+    },
+    {
+      "id": "duplicate_event_label",
+      "evidence_valid": false,
+      "expected_classification": "INVALID_TRACE",
+      "expected_metrics": null,
+      "trace": {
+        "schema": "opencontrol/0.2",
+        "scenario": "benign",
+        "policy": "commit_guard",
+        "requests": {
+          "A": 30,
+          "B": 40
+        },
+        "events": [
+          {
+            "id": "event-0",
+            "event": "prepare_A",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-1",
+            "event": "commit_A",
+            "balance_before": 0,
+            "balance_after": 30,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "executed": true,
+            "effect_amount": 30,
+            "reason": "approved"
+          },
+          {
+            "id": "duplicate-occurrence",
+            "event": "commit_A",
+            "balance_before": 0,
+            "balance_after": 30,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "executed": true,
+            "effect_amount": 30,
+            "reason": "approved"
+          },
+          {
+            "id": "event-2",
+            "event": "prepare_B",
+            "balance_before": 30,
+            "balance_after": 30,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-3",
+            "event": "commit_B",
+            "balance_before": 30,
+            "balance_after": 70,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "executed": true,
+            "effect_amount": 40,
+            "reason": "approved"
+          }
+        ],
+        "observed_final_balance": 70
+      }
+    },
+    {
+      "id": "duplicate_event_identity",
+      "evidence_valid": false,
+      "expected_classification": "INVALID_TRACE",
+      "expected_metrics": null,
+      "trace": {
+        "schema": "opencontrol/0.2",
+        "scenario": "benign",
+        "policy": "commit_guard",
+        "requests": {
+          "A": 30,
+          "B": 40
+        },
+        "events": [
+          {
+            "id": "event-0",
+            "event": "prepare_A",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-1",
+            "event": "commit_A",
+            "balance_before": 0,
+            "balance_after": 30,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "executed": true,
+            "effect_amount": 30,
+            "reason": "approved"
+          },
+          {
+            "id": "event-0",
+            "event": "prepare_B",
+            "balance_before": 30,
+            "balance_after": 30,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-3",
+            "event": "commit_B",
+            "balance_before": 30,
+            "balance_after": 70,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "executed": true,
+            "effect_amount": 40,
+            "reason": "approved"
+          }
+        ],
+        "observed_final_balance": 70
+      }
+    },
+    {
+      "id": "incorrect_trace_amount",
+      "evidence_valid": false,
+      "expected_classification": "INVALID_TRACE",
+      "expected_metrics": null,
+      "trace": {
+        "schema": "opencontrol/0.2",
+        "scenario": "benign",
+        "policy": "commit_guard",
+        "requests": {
+          "A": 30,
+          "B": 40
+        },
+        "events": [
+          {
+            "id": "event-0",
+            "event": "prepare_A",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-1",
+            "event": "commit_A",
+            "balance_before": 0,
+            "balance_after": 30,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 10,
+            "executed": true,
+            "effect_amount": 30,
+            "reason": "approved"
+          },
+          {
+            "id": "event-2",
+            "event": "prepare_B",
+            "balance_before": 30,
+            "balance_after": 30,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-3",
+            "event": "commit_B",
+            "balance_before": 30,
+            "balance_after": 70,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "executed": true,
+            "effect_amount": 40,
+            "reason": "approved"
+          }
+        ],
+        "observed_final_balance": 70
+      }
+    },
+    {
+      "id": "inconsistent_execution_effect",
+      "evidence_valid": false,
+      "expected_classification": "INVALID_TRACE",
+      "expected_metrics": null,
+      "trace": {
+        "schema": "opencontrol/0.2",
+        "scenario": "benign",
+        "policy": "commit_guard",
+        "requests": {
+          "A": 30,
+          "B": 40
+        },
+        "events": [
+          {
+            "id": "event-0",
+            "event": "prepare_A",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-1",
+            "event": "commit_A",
+            "balance_before": 0,
+            "balance_after": 30,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "executed": true,
+            "effect_amount": 10,
+            "reason": "approved"
+          },
+          {
+            "id": "event-2",
+            "event": "prepare_B",
+            "balance_before": 30,
+            "balance_after": 30,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-3",
+            "event": "commit_B",
+            "balance_before": 30,
+            "balance_after": 70,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "executed": true,
+            "effect_amount": 40,
+            "reason": "approved"
+          }
+        ],
+        "observed_final_balance": 70
+      }
+    },
+    {
+      "id": "invalid_negative_request",
+      "evidence_valid": false,
+      "expected_classification": "INVALID_INPUT",
+      "expected_metrics": null,
+      "trace": {
+        "schema": "opencontrol/0.2",
+        "scenario": "benign",
+        "policy": "commit_guard",
+        "requests": {
+          "A": -1,
+          "B": 40
+        },
+        "events": [
+          {
+            "id": "event-0",
+            "event": "prepare_A",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-1",
+            "event": "commit_A",
+            "balance_before": 0,
+            "balance_after": 30,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "executed": true,
+            "effect_amount": 30,
+            "reason": "approved"
+          },
+          {
+            "id": "event-2",
+            "event": "prepare_B",
+            "balance_before": 30,
+            "balance_after": 30,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-3",
+            "event": "commit_B",
+            "balance_before": 30,
+            "balance_after": 70,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "executed": true,
+            "effect_amount": 40,
+            "reason": "approved"
+          }
+        ],
+        "observed_final_balance": 70
+      }
+    },
+    {
+      "id": "invalid_policy",
+      "evidence_valid": false,
+      "expected_classification": "INVALID_INPUT",
+      "expected_metrics": null,
+      "trace": {
+        "schema": "opencontrol/0.2",
+        "scenario": "benign",
+        "policy": "invalid_policy",
+        "requests": {
+          "A": 30,
+          "B": 40
+        },
+        "events": [
+          {
+            "id": "event-0",
+            "event": "prepare_A",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-1",
+            "event": "commit_A",
+            "balance_before": 0,
+            "balance_after": 30,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "executed": true,
+            "effect_amount": 30,
+            "reason": "approved"
+          },
+          {
+            "id": "event-2",
+            "event": "prepare_B",
+            "balance_before": 30,
+            "balance_after": 30,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-3",
+            "event": "commit_B",
+            "balance_before": 30,
+            "balance_after": 70,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "executed": true,
+            "effect_amount": 40,
+            "reason": "approved"
+          }
+        ],
+        "observed_final_balance": 70
+      }
+    },
+    {
+      "id": "unknown_event",
+      "evidence_valid": false,
+      "expected_classification": "INVALID_TRACE",
+      "expected_metrics": null,
+      "trace": {
+        "schema": "opencontrol/0.2",
+        "scenario": "benign",
+        "policy": "commit_guard",
+        "requests": {
+          "A": 30,
+          "B": 40
+        },
+        "events": [
+          {
+            "id": "event-0",
+            "event": "prepare_A",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-1",
+            "event": "nonsense",
+            "balance_before": 0,
+            "balance_after": 30,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "executed": true,
+            "effect_amount": 30,
+            "reason": "approved"
+          },
+          {
+            "id": "event-2",
+            "event": "prepare_B",
+            "balance_before": 30,
+            "balance_after": 30,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-3",
+            "event": "commit_B",
+            "balance_before": 30,
+            "balance_after": 70,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "executed": true,
+            "effect_amount": 40,
+            "reason": "approved"
+          }
+        ],
+        "observed_final_balance": 70
+      }
+    },
+    {
+      "id": "missing_commit_trace",
+      "evidence_valid": false,
+      "expected_classification": "INSUFFICIENT_EVIDENCE",
+      "expected_metrics": null,
+      "trace": {
+        "schema": "opencontrol/0.2",
+        "scenario": "benign",
+        "policy": "commit_guard",
+        "requests": {
+          "A": 30,
+          "B": 40
+        },
+        "events": [
+          {
+            "id": "event-0",
+            "event": "prepare_A",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-2",
+            "event": "prepare_B",
+            "balance_before": 30,
+            "balance_after": 30,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-3",
+            "event": "commit_B",
+            "balance_before": 30,
+            "balance_after": 70,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "executed": true,
+            "effect_amount": 40,
+            "reason": "approved"
+          }
+        ],
+        "observed_final_balance": 70
+      }
+    },
+    {
+      "id": "missing_control_event",
+      "evidence_valid": false,
+      "expected_classification": "INSUFFICIENT_EVIDENCE",
+      "expected_metrics": null,
+      "trace": {
+        "schema": "opencontrol/0.2",
+        "scenario": "revocation",
+        "policy": "snapshot",
+        "requests": {
+          "A": 30,
+          "B": 40
+        },
+        "events": [
+          {
+            "id": "event-0",
+            "event": "prepare_A",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-2",
+            "event": "commit_A",
+            "balance_before": 0,
+            "balance_after": 30,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "executed": true,
+            "effect_amount": 30,
+            "reason": "approved"
+          },
+          {
+            "id": "event-3",
+            "event": "prepare_B",
+            "balance_before": 30,
+            "balance_after": 30,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-4",
+            "event": "commit_B",
+            "balance_before": 30,
+            "balance_after": 70,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "executed": true,
+            "effect_amount": 40,
+            "reason": "approved"
+          }
+        ],
+        "observed_final_balance": 70
+      }
+    },
+    {
+      "id": "foreign_operation_identity",
+      "evidence_valid": false,
+      "expected_classification": "INVALID_TRACE",
+      "expected_metrics": null,
+      "trace": {
+        "schema": "opencontrol/0.2",
+        "scenario": "benign",
+        "policy": "commit_guard",
+        "requests": {
+          "A": 30,
+          "B": 40
+        },
+        "events": [
+          {
+            "id": "event-0",
+            "event": "prepare_A",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-1",
+            "event": "commit_A",
+            "balance_before": 0,
+            "balance_after": 30,
+            "operation_id": "foreign",
+            "actor": "A",
+            "amount": 30,
+            "executed": true,
+            "effect_amount": 30,
+            "reason": "approved"
+          },
+          {
+            "id": "event-2",
+            "event": "prepare_B",
+            "balance_before": 30,
+            "balance_after": 30,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-3",
+            "event": "commit_B",
+            "balance_before": 30,
+            "balance_after": 70,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "executed": true,
+            "effect_amount": 40,
+            "reason": "approved"
+          }
+        ],
+        "observed_final_balance": 70
+      }
+    },
+    {
+      "id": "colliding_operation_identity",
+      "evidence_valid": false,
+      "expected_classification": "INVALID_TRACE",
+      "expected_metrics": null,
+      "trace": {
+        "schema": "opencontrol/0.2",
+        "scenario": "benign",
+        "policy": "commit_guard",
+        "requests": {
+          "A": 30,
+          "B": 40
+        },
+        "events": [
+          {
+            "id": "event-0",
+            "event": "prepare_A",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-1",
+            "event": "commit_A",
+            "balance_before": 0,
+            "balance_after": 30,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "executed": true,
+            "effect_amount": 30,
+            "reason": "approved"
+          },
+          {
+            "id": "event-2",
+            "event": "prepare_B",
+            "balance_before": 30,
+            "balance_after": 30,
+            "operation_id": "operation-A",
+            "actor": "B",
+            "amount": 40,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-3",
+            "event": "commit_B",
+            "balance_before": 30,
+            "balance_after": 70,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "executed": true,
+            "effect_amount": 40,
+            "reason": "approved"
+          }
+        ],
+        "observed_final_balance": 70
+      }
+    },
+    {
+      "id": "wrong_actor",
+      "evidence_valid": false,
+      "expected_classification": "INVALID_TRACE",
+      "expected_metrics": null,
+      "trace": {
+        "schema": "opencontrol/0.2",
+        "scenario": "benign",
+        "policy": "commit_guard",
+        "requests": {
+          "A": 30,
+          "B": 40
+        },
+        "events": [
+          {
+            "id": "event-0",
+            "event": "prepare_A",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-1",
+            "event": "commit_A",
+            "balance_before": 0,
+            "balance_after": 30,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "executed": true,
+            "effect_amount": 30,
+            "reason": "approved"
+          },
+          {
+            "id": "event-2",
+            "event": "prepare_B",
+            "balance_before": 30,
+            "balance_after": 30,
+            "operation_id": "operation-B",
+            "actor": "A",
+            "amount": 40,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-3",
+            "event": "commit_B",
+            "balance_before": 30,
+            "balance_after": 70,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "executed": true,
+            "effect_amount": 40,
+            "reason": "approved"
+          }
+        ],
+        "observed_final_balance": 70
+      }
+    },
+    {
+      "id": "ledger_jump",
+      "evidence_valid": false,
+      "expected_classification": "INVALID_TRACE",
+      "expected_metrics": null,
+      "trace": {
+        "schema": "opencontrol/0.2",
+        "scenario": "benign",
+        "policy": "commit_guard",
+        "requests": {
+          "A": 30,
+          "B": 40
+        },
+        "events": [
+          {
+            "id": "event-0",
+            "event": "prepare_A",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-1",
+            "event": "commit_A",
+            "balance_before": 0,
+            "balance_after": 31,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "executed": true,
+            "effect_amount": 30,
+            "reason": "approved"
+          },
+          {
+            "id": "event-2",
+            "event": "prepare_B",
+            "balance_before": 30,
+            "balance_after": 30,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-3",
+            "event": "commit_B",
+            "balance_before": 30,
+            "balance_after": 70,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "executed": true,
+            "effect_amount": 40,
+            "reason": "approved"
+          }
+        ],
+        "observed_final_balance": 70
+      }
+    },
+    {
+      "id": "final_balance_mismatch",
+      "evidence_valid": false,
+      "expected_classification": "INVALID_TRACE",
+      "expected_metrics": null,
+      "trace": {
+        "schema": "opencontrol/0.2",
+        "scenario": "benign",
+        "policy": "commit_guard",
+        "requests": {
+          "A": 30,
+          "B": 40
+        },
+        "events": [
+          {
+            "id": "event-0",
+            "event": "prepare_A",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-1",
+            "event": "commit_A",
+            "balance_before": 0,
+            "balance_after": 30,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "executed": true,
+            "effect_amount": 30,
+            "reason": "approved"
+          },
+          {
+            "id": "event-2",
+            "event": "prepare_B",
+            "balance_before": 30,
+            "balance_after": 30,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-3",
+            "event": "commit_B",
+            "balance_before": 30,
+            "balance_after": 70,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "executed": true,
+            "effect_amount": 40,
+            "reason": "approved"
+          }
+        ],
+        "observed_final_balance": 71
+      }
+    },
+    {
+      "id": "commit_before_prepare",
+      "evidence_valid": false,
+      "expected_classification": "INVALID_TRACE",
+      "expected_metrics": null,
+      "trace": {
+        "schema": "opencontrol/0.2",
+        "scenario": "benign",
+        "policy": "commit_guard",
+        "requests": {
+          "A": 30,
+          "B": 40
+        },
+        "events": [
+          {
+            "id": "event-1",
+            "event": "commit_A",
+            "balance_before": 0,
+            "balance_after": 30,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "executed": true,
+            "effect_amount": 30,
+            "reason": "approved"
+          },
+          {
+            "id": "event-0",
+            "event": "prepare_A",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-2",
+            "event": "prepare_B",
+            "balance_before": 30,
+            "balance_after": 30,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-3",
+            "event": "commit_B",
+            "balance_before": 30,
+            "balance_after": 70,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "executed": true,
+            "effect_amount": 40,
+            "reason": "approved"
+          }
+        ],
+        "observed_final_balance": 70
+      }
+    },
+    {
+      "id": "missing_execution_field",
+      "evidence_valid": false,
+      "expected_classification": "INSUFFICIENT_EVIDENCE",
+      "expected_metrics": null,
+      "trace": {
+        "schema": "opencontrol/0.2",
+        "scenario": "benign",
+        "policy": "commit_guard",
+        "requests": {
+          "A": 30,
+          "B": 40
+        },
+        "events": [
+          {
+            "id": "event-0",
+            "event": "prepare_A",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-1",
+            "event": "commit_A",
+            "balance_before": 0,
+            "balance_after": 30,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "effect_amount": 30,
+            "reason": "approved"
+          },
+          {
+            "id": "event-2",
+            "event": "prepare_B",
+            "balance_before": 30,
+            "balance_after": 30,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-3",
+            "event": "commit_B",
+            "balance_before": 30,
+            "balance_after": 70,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "executed": true,
+            "effect_amount": 40,
+            "reason": "approved"
+          }
+        ],
+        "observed_final_balance": 70
+      }
+    },
+    {
+      "id": "boolean_as_amount",
+      "evidence_valid": false,
+      "expected_classification": "INVALID_TRACE",
+      "expected_metrics": null,
+      "trace": {
+        "schema": "opencontrol/0.2",
+        "scenario": "benign",
+        "policy": "commit_guard",
+        "requests": {
+          "A": 30,
+          "B": 40
+        },
+        "events": [
+          {
+            "id": "event-0",
+            "event": "prepare_A",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-1",
+            "event": "commit_A",
+            "balance_before": 0,
+            "balance_after": 30,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": true,
+            "executed": true,
+            "effect_amount": 30,
+            "reason": "approved"
+          },
+          {
+            "id": "event-2",
+            "event": "prepare_B",
+            "balance_before": 30,
+            "balance_after": 30,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-3",
+            "event": "commit_B",
+            "balance_before": 30,
+            "balance_after": 70,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "executed": true,
+            "effect_amount": 40,
+            "reason": "approved"
+          }
+        ],
+        "observed_final_balance": 70
+      }
+    },
+    {
+      "id": "nonboolean_execution_flag",
+      "evidence_valid": false,
+      "expected_classification": "INVALID_TRACE",
+      "expected_metrics": null,
+      "trace": {
+        "schema": "opencontrol/0.2",
+        "scenario": "benign",
+        "policy": "commit_guard",
+        "requests": {
+          "A": 30,
+          "B": 40
+        },
+        "events": [
+          {
+            "id": "event-0",
+            "event": "prepare_A",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-1",
+            "event": "commit_A",
+            "balance_before": 0,
+            "balance_after": 30,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "executed": "false",
+            "effect_amount": 30,
+            "reason": "approved"
+          },
+          {
+            "id": "event-2",
+            "event": "prepare_B",
+            "balance_before": 30,
+            "balance_after": 30,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-3",
+            "event": "commit_B",
+            "balance_before": 30,
+            "balance_after": 70,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "executed": true,
+            "effect_amount": 40,
+            "reason": "approved"
+          }
+        ],
+        "observed_final_balance": 70
+      }
+    },
+    {
+      "id": "unsupported_schema",
+      "evidence_valid": false,
+      "expected_classification": "INVALID_INPUT",
+      "expected_metrics": null,
+      "trace": {
+        "schema": "other",
+        "scenario": "benign",
+        "policy": "commit_guard",
+        "requests": {
+          "A": 30,
+          "B": 40
+        },
+        "events": [
+          {
+            "id": "event-0",
+            "event": "prepare_A",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-1",
+            "event": "commit_A",
+            "balance_before": 0,
+            "balance_after": 30,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "executed": true,
+            "effect_amount": 30,
+            "reason": "approved"
+          },
+          {
+            "id": "event-2",
+            "event": "prepare_B",
+            "balance_before": 30,
+            "balance_after": 30,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-3",
+            "event": "commit_B",
+            "balance_before": 30,
+            "balance_after": 70,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "executed": true,
+            "effect_amount": 40,
+            "reason": "approved"
+          }
+        ],
+        "observed_final_balance": 70
+      }
+    },
+    {
+      "id": "unknown_scenario",
+      "evidence_valid": false,
+      "expected_classification": "INVALID_INPUT",
+      "expected_metrics": null,
+      "trace": {
+        "schema": "opencontrol/0.2",
+        "scenario": "unregistered",
+        "policy": "commit_guard",
+        "requests": {
+          "A": 30,
+          "B": 40
+        },
+        "events": [
+          {
+            "id": "event-0",
+            "event": "prepare_A",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-1",
+            "event": "commit_A",
+            "balance_before": 0,
+            "balance_after": 30,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "executed": true,
+            "effect_amount": 30,
+            "reason": "approved"
+          },
+          {
+            "id": "event-2",
+            "event": "prepare_B",
+            "balance_before": 30,
+            "balance_after": 30,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-3",
+            "event": "commit_B",
+            "balance_before": 30,
+            "balance_after": 70,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "executed": true,
+            "effect_amount": 40,
+            "reason": "approved"
+          }
+        ],
+        "observed_final_balance": 70
+      }
+    },
+    {
+      "id": "unsupported_event_field",
+      "evidence_valid": false,
+      "expected_classification": "INVALID_TRACE",
+      "expected_metrics": null,
+      "trace": {
+        "schema": "opencontrol/0.2",
+        "scenario": "benign",
+        "policy": "commit_guard",
+        "requests": {
+          "A": 30,
+          "B": 40
+        },
+        "events": [
+          {
+            "id": "event-0",
+            "event": "prepare_A",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "ticket_issued": true,
+            "extra": "unmodeled"
+          },
+          {
+            "id": "event-1",
+            "event": "commit_A",
+            "balance_before": 0,
+            "balance_after": 30,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "executed": true,
+            "effect_amount": 30,
+            "reason": "approved"
+          },
+          {
+            "id": "event-2",
+            "event": "prepare_B",
+            "balance_before": 30,
+            "balance_after": 30,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-3",
+            "event": "commit_B",
+            "balance_before": 30,
+            "balance_after": 70,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "executed": true,
+            "effect_amount": 40,
+            "reason": "approved"
+          }
+        ],
+        "observed_final_balance": 70
+      }
+    },
+    {
+      "id": "invalid_events_type",
+      "evidence_valid": false,
+      "expected_classification": "INVALID_TRACE",
+      "expected_metrics": null,
+      "trace": {
+        "schema": "opencontrol/0.2",
+        "scenario": "benign",
+        "policy": "commit_guard",
+        "requests": {
+          "A": 30,
+          "B": 40
+        },
+        "events": "broken",
+        "observed_final_balance": 70
+      }
+    },
+    {
+      "id": "empty_event_evidence",
+      "evidence_valid": false,
+      "expected_classification": "INSUFFICIENT_EVIDENCE",
+      "expected_metrics": null,
+      "trace": {
+        "schema": "opencontrol/0.2",
+        "scenario": "benign",
+        "policy": "commit_guard",
+        "requests": {
+          "A": 30,
+          "B": 40
+        },
+        "events": [],
+        "observed_final_balance": 70
+      }
+    },
+    {
+      "id": "control_changes_balance",
+      "evidence_valid": false,
+      "expected_classification": "INVALID_TRACE",
+      "expected_metrics": null,
+      "trace": {
+        "schema": "opencontrol/0.2",
+        "scenario": "authority_outage",
+        "policy": "shared_budget",
+        "requests": {
+          "A": 30,
+          "B": 40
+        },
+        "events": [
+          {
+            "id": "event-0",
+            "event": "prepare_A",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-1",
+            "event": "down",
+            "balance_before": 0,
+            "balance_after": 1
+          },
+          {
+            "id": "event-2",
+            "event": "commit_A",
+            "balance_before": 0,
+            "balance_after": 30,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "executed": true,
+            "effect_amount": 30,
+            "reason": "approved"
+          },
+          {
+            "id": "event-3",
+            "event": "up",
+            "balance_before": 30,
+            "balance_after": 30
+          },
+          {
+            "id": "event-4",
+            "event": "prepare_B",
+            "balance_before": 30,
+            "balance_after": 30,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-5",
+            "event": "commit_B",
+            "balance_before": 30,
+            "balance_after": 70,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "executed": true,
+            "effect_amount": 40,
+            "reason": "approved"
+          }
+        ],
+        "observed_final_balance": 70
+      }
+    },
+    {
+      "id": "denied_action_has_effect",
+      "evidence_valid": false,
+      "expected_classification": "INVALID_TRACE",
+      "expected_metrics": null,
+      "trace": {
+        "schema": "opencontrol/0.2",
+        "scenario": "benign",
+        "policy": "commit_guard",
+        "requests": {
+          "A": 30,
+          "B": 40
+        },
+        "events": [
+          {
+            "id": "event-0",
+            "event": "prepare_A",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-1",
+            "event": "commit_A",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "executed": false,
+            "effect_amount": 30,
+            "reason": "declined"
+          },
+          {
+            "id": "event-2",
+            "event": "prepare_B",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-3",
+            "event": "commit_B",
+            "balance_before": 0,
+            "balance_after": 40,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "executed": true,
+            "effect_amount": 40,
+            "reason": "approved"
+          }
+        ],
+        "observed_final_balance": 40
+      }
+    },
+    {
+      "id": "extra_control_event",
+      "evidence_valid": false,
+      "expected_classification": "INVALID_TRACE",
+      "expected_metrics": null,
+      "trace": {
+        "schema": "opencontrol/0.2",
+        "scenario": "benign",
+        "policy": "commit_guard",
+        "requests": {
+          "A": 30,
+          "B": 40
+        },
+        "events": [
+          {
+            "id": "event-0",
+            "event": "prepare_A",
+            "balance_before": 0,
+            "balance_after": 0,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-1",
+            "event": "commit_A",
+            "balance_before": 0,
+            "balance_after": 30,
+            "operation_id": "operation-A",
+            "actor": "A",
+            "amount": 30,
+            "executed": true,
+            "effect_amount": 30,
+            "reason": "approved"
+          },
+          {
+            "id": "event-2",
+            "event": "prepare_B",
+            "balance_before": 30,
+            "balance_after": 30,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "ticket_issued": true
+          },
+          {
+            "id": "event-3",
+            "event": "commit_B",
+            "balance_before": 30,
+            "balance_after": 70,
+            "operation_id": "operation-B",
+            "actor": "B",
+            "amount": 40,
+            "executed": true,
+            "effect_amount": 40,
+            "reason": "approved"
+          },
+          {
+            "id": "extra",
+            "event": "stop",
+            "balance_before": 70,
+            "balance_after": 70
+          }
+        ],
+        "observed_final_balance": 70
+      }
+    }
+  ]
+}

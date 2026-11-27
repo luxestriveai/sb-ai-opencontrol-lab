@@ -1,0 +1,61 @@
+{
+  "semantic_sha256": "59a34bf021676b6b66178d2a70ec396c6dc08edc3a60151c7625843ecf74bc52",
+  "timezone": "America/New_York",
+  "metadata_differences_expected": [
+    "timestamps",
+    "output paths",
+    "runtime"
+  ],
+  "first_elapsed_seconds": 38.362707199994475,
+  "second_output": "TEMP_ROOT\\historical-run-03",
+  "second_elapsed_seconds": 38.97826340000029,
+  "comparisons": [
+    {
+      "sha256": "07330e85ee53a9fc33b8e6ae46461ff05f0840c1605e2033e6d30dc49e1af147",
+      "artifact": "fixture-results.json",
+      "byte_identical": true
+    },
+    {
+      "sha256": "f2e302b5b49f2af7d7c8166ddfc51aa53961022eb4ad86bdbbe0bdfd481d58e1",
+      "artifact": "optimized-fixture-results.json",
+      "byte_identical": true
+    },
+    {
+      "sha256": "6cc232b64ef2c2841c208c30c0906b1454421bde8e4312f5d1c42cda96b044b9",
+      "artifact": "baseline-audit.json",
+      "byte_identical": true
+    },
+    {
+      "sha256": "9e64624a8d035d2caed65d9303a7dfa8dc5ff41a0b296a79362ea9c07b9ae88f",
+      "artifact": "observed-traces.jsonl.gz",
+      "byte_identical": true
+    },
+    {
+      "sha256": "1f50168feb0a736be150fb96a1e6863a9a5552e64e2a331a2f5b2f97648f8d26",
+      "artifact": "verified-runs.csv",
+      "byte_identical": true
+    },
+    {
+      "sha256": "cad511c6835802d992c13f6e9e6a69b9e4127e75d2643415a49fc0117659e97b",
+      "artifact": "verified-summary.csv",
+      "byte_identical": true
+    },
+    {
+      "sha256": "429ef21c14fcf9a9770cc114f0f71f81e0dc6792d182dd65f9a9cd0bfb469f80",
+      "artifact": "verified-summary.json",
+      "byte_identical": true
+    },
+    {
+      "sha256": "a90a8eccd2d2f9af27c4418d94792d53c6ad3f335fe97568fb6fc79a8315c63b",
+      "artifact": "mutation-results.json",
+      "byte_identical": true
+    },
+    {
+      "sha256": "bb96fbe6b64c2b4e6c0f9ec21f0fe5dfb93624d2c95d50b34f7980240c150d81",
+      "artifact": "robustness-results.json",
+      "byte_identical": true
+    }
+  ],
+  "status": "PASS",
+  "first_output": "TEMP_ROOT\\historical-run-04"
+}
